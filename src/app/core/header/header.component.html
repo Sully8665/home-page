@@ -1,0 +1,23 @@
+
+<nav class="navbar navbar-expand-lg border-bottom" style="background: var(--card)">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="#home">{{ currentLang==='fa' ? NAME_FA : NAME }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navMenu" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#about" class="nav-link" [class.active]="activeSectionId==='about'">{{ currentLang==='fa' ? NAV_FA.about : NAV.about }}</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link" [class.active]="activeSectionId==='skills'">{{ currentLang==='fa' ? NAV_FA.skills : NAV.skills }}</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link" [class.active]="activeSectionId==='experience'">{{ currentLang==='fa' ? NAV_FA.experience : NAV.experience }}</a></li>
+        <li class="nav-item"><a href="#education" class="nav-link" [class.active]="activeSectionId==='education'">{{ currentLang==='fa' ? NAV_FA.education : NAV.education }}</a></li>
+        <li class="nav-item"><a href="#testimonials" class="nav-link" [class.active]="activeSectionId==='testimonials'">{{ currentLang==='fa' ? NAV_FA.testimonials : NAV.testimonials }}</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link" [class.active]="activeSectionId==='contact'">{{ currentLang==='fa' ? NAV_FA.contact : NAV.contact }}</a></li>
+      </ul>
+      <div class="ms-3">
+        <button class="btn btn-sm btn-outline-accent me-2" (click)="toggleTheme()">{{ theme==='light'?'Dark':'Light' }}</button>
+        <button class="btn btn-sm btn-outline-secondary" (click)="toggleLang()">{{ currentLang==='fa' ? 'EN' : 'FA' }}</button>
+      </div>
+    </div>
+  </div>
+</nav>

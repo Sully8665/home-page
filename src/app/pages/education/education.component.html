@@ -1,0 +1,11 @@
+
+<div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.education : SECTION_TITLES.education }}</div>
+<div class="row g-3">
+  <div class="col-md-6 col-lg-4" *ngFor="let ed of education">
+    <div class="card-flat h-100">
+      <div class="fw-medium">{{ed.degree}}</div>
+      <div class="text-muted small">{{ed.school}}</div>
+      <div class="text-muted small" *ngIf="ed.period">{{ed.period}}</div>
+    </div>
+  </div>
+</div>

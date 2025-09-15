@@ -1,0 +1,33 @@
+
+<div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.experience : SECTION_TITLES.experience }}</div>
+<div class="timeline">
+  <div class="timeline-item mb-3" *ngFor="let exp of visibleExperiences(); let i = index">
+    <div class="card-flat">
+      <div class="d-flex justify-content-between align-items-baseline flex-wrap gap-2">
+        <div>
+          <div class="fw-semibold">{{exp.role}} — {{exp.company}}</div>
+          <div class="text-muted small">{{exp.location}}</div>
+        </div>
+        <div class="text-muted small">{{exp.period}}</div>
+      </div>
+
+      <div class="expand-body" [class.open]="expanded.has(i)">
+        <ul class="mt-2 mb-0">
+          <li *ngFor="let b of exp.bullets">{{b}}</li>
+        </ul>
+      </div>
+
+      <div class="d-flex justify-content-end mt-2">
+        <button class="btn btn-sm btn-outline-accent" (click)="toggleExpand(i)">
+          {{ lang.current==='fa' ? (expanded.has(i) ? 'کمتر' : 'بیشتر') : (expanded.has(i) ? 'Less' : 'More') }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mt-3" *ngIf="experiences.length > 3">
+  <button class="btn btn-outline-accent" (click)="showAll = !showAll">
+    {{ lang.current==='fa' ? (showAll ? 'نمایش کمتر' : 'نمایش بیشتر') : (showAll ? 'Show Less' : 'Show More') }}
+  </button>
+</div>
