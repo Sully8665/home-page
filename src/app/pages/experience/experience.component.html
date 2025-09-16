@@ -1,4 +1,3 @@
-
 <div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.experience : SECTION_TITLES.experience }}</div>
 <div class="timeline">
   <div class="timeline-item mb-3" *ngFor="let exp of visibleExperiences(); let i = index">
@@ -24,10 +23,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="text-center mt-3" *ngIf="experiences.length > 3">
-  <button class="btn btn-outline-accent" (click)="showAll = !showAll">
-    {{ lang.current==='fa' ? (showAll ? 'نمایش کمتر' : 'نمایش بیشتر') : (showAll ? 'Show Less' : 'Show More') }}
-  </button>
 </div>

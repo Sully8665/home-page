@@ -1,5 +1,6 @@
 
-export interface Experience {
+export interface Experience
+{
   role: string;
   company: string;
   location?: string;
@@ -9,7 +10,8 @@ export interface Experience {
 }
 export interface Education { degree: string; school: string; period?: string; }
 export interface Testimonial { name: string; role: string; relation: string; date: string; text: string; }
-export interface SkillDetail {
+export interface SkillDetail
+{
   name: string;
   nameFa: string;
   experience: string;
@@ -26,7 +28,8 @@ export const ROLE_FA = 'مهندس ارشد نرم‌افزار';
 export const CONTACT_INTRO = "I'm available via the following channels:";
 export const CONTACT_INTRO_FA = 'از راه‌های زیر در دسترس هستم:';
 
-export interface ContactInfo {
+export interface ContactInfo
+{
   type: 'email' | 'linkedin' | 'whatsapp' | 'github';
   label: string;
   labelFa: string;
@@ -41,7 +44,7 @@ export const CONTACT_INFO: ContactInfo[] = [
     type: 'email',
     label: 'Email',
     labelFa: 'ایمیل',
-    value: 'saleh.rezaei@gmail.com',
+    value: 'saleh.rezaei[at]gmail.com',
     url: 'mailto:saleh.rezaei@gmail.com',
     icon: 'alternate_email'
   },
@@ -70,10 +73,10 @@ export const CONTACT_INFO: ContactInfo[] = [
     icon: 'code'
   }
 ];
-export const NAV_LABELS = { about:'About', skills:'Skills', experience:'Experience', education:'Education', testimonials:'Testimonials', blog:'Blog', contact:'Contact' };
-export const NAV_LABELS_FA = { about:'درباره', skills:'مهارت‌ها', experience:'تجربیات', education:'تحصیلات', testimonials:'توصیه‌نامه‌ها', blog:'وبلاگ', contact:'ارتباط' };
-export const SECTION_TITLES = { about:'About', skills:'Skills', experience:'Experience', education:'Education', testimonials:'Testimonials', blog:'Blog', contact:'Contact' };
-export const SECTION_TITLES_FA = { about:'درباره', skills:'مهارت‌ها', experience:'تجربیات', education:'تحصیلات', testimonials:'توصیه‌نامه‌ها', blog:'وبلاگ', contact:'ارتباط' };
+export const NAV_LABELS = { about: 'About', skills: 'Skills', experience: 'Experience', education: 'Education', testimonials: 'Testimonials', blog: 'Blog', contact: 'Contact' };
+export const NAV_LABELS_FA = { about: 'درباره', skills: 'مهارت‌ها', experience: 'تجربیات', education: 'تحصیلات', testimonials: 'توصیه‌نامه‌ها', blog: 'وبلاگ', contact: 'ارتباط' };
+export const SECTION_TITLES = { about: 'About', skills: 'Skills', experience: 'Experience', education: 'Education', testimonials: 'Testimonials', blog: 'Blog', contact: 'Contact' };
+export const SECTION_TITLES_FA = { about: 'درباره', skills: 'مهارت‌ها', experience: 'تجربیات', education: 'تحصیلات', testimonials: 'توصیه‌نامه‌ها', blog: 'وبلاگ', contact: 'ارتباط' };
 export const SUMMARY = `Full-stack developer with a strong foundation in backend engineering and a focus on clean, scalable architecture. I specialize in building robust systems, optimizing complex SQL procedures, and maintaining high-performance applications across the stack. With a meticulous approach to refactoring and a deep understanding of system design, I bring both precision and long-term thinking to every project.
 
 Driven by clarity, efficiency, and continuous improvement.
@@ -84,8 +87,8 @@ export const SUMMARY_FA = `توسعه‌دهنده فول‌استک با تمر
 با انگیزه شفافیت، کارایی و بهبود مستمر.
 
 به دنبال فرصت‌های شغلی در هلند یا آلمان همراه با پشتیبانی جابجایی و ویزا هستم.`;
-export const SKILLS = ['C#','.NET','.NET Core','Angular','JavaScript','TypeScript','NodeJS','Express.js','Nest.js','RESTful APIs','WebSocket','Entity Framework','EF Core','SQL Server','Postgres','MongoDB','Redis','Git'];
-export const SKILLS_FA = ['#C','دات‌نت','دات‌نت کور','انگولار','جاوااسکریپت','تایپ‌اسکریپت','نود جی‌اس','اکسپرس','نست‌جی‌اس','APIهای REST','وب‌سوکت','Entity Framework','EF Core','SQL Server','پستگرس','مانگو‌دی‌بی','ردیس','گیت'];
+export const SKILLS = ['C#', '.NET', '.NET Core', 'Angular', 'JavaScript', 'TypeScript', 'NodeJS', 'Express.js', 'Nest.js', 'RESTful APIs', 'WebSocket', 'Entity Framework', 'EF Core', 'SQL Server', 'Postgres', 'MongoDB', 'Redis', 'Git'];
+export const SKILLS_FA = ['#C', 'دات‌نت', 'دات‌نت کور', 'انگولار', 'جاوااسکریپت', 'تایپ‌اسکریپت', 'نود جی‌اس', 'اکسپرس', 'نست‌جی‌اس', 'APIهای REST', 'وب‌سوکت', 'Entity Framework', 'EF Core', 'SQL Server', 'پستگرس', 'مانگو‌دی‌بی', 'ردیس', 'گیت'];
 
 export const SKILL_DETAILS: SkillDetail[] = [
   {
@@ -270,56 +273,80 @@ export const SKILL_DETAILS: SkillDetail[] = [
   }
 ];
 export const EXPERIENCES: Experience[] = [
-  { role:'Full-Stack Developer', company:'Total E Integrated', location:'Toronto, Canada', period:'10/2024 – Present', year:2024, bullets:[
-    'Develop & maintain ERP modules (F&B, Retail, Tee Sheet, Payment).',
-    'Extend Angular components and .NET Core APIs with clean, scalable patterns.'
-  ]},
-  { role:'Senior Software Engineer', company:'arades GmbH', location:'Frankfurt, Germany', period:'08/2023 – 07/2024', year:2023, bullets:[
-    'Designed high-performance APIs with .NET Core & Node.js.',
-    'Integrated Microsoft Dynamics & Azure; built License Cost Calculator backend (~20% faster data flows).'
-  ]},
-  { role:'Senior Software Engineer', company:'Roma Parvaz', location:'Tehran, Iran', period:'09/2022 – 08/2023', year:2022, bullets:[
-    'Built B2B flight reservation backends using NestJS + RabbitMQ, with Redis caching.'
-  ]},
-  { role:'Full Stack Software Developer', company:'Self-Employed', location:'Tehran, Iran', period:'05/2020 – 05/2022', year:2020, bullets:[
-    'Delivered maintainable Node.js + MongoDB services; optimized NoSQL queries for performance.'
-  ]},
-  { role:'Senior Software Engineer', company:'GSS Int', location:'Tehran, Iran', period:'08/2015 – 05/2020', year:2015, bullets:[
-    'Developed WPF/C#.NET apps; refactored legacy modules for maintainability & performance.',
-    'Improved legacy cheque scanner QR reading speed by ~8×.'
-  ]},
-  { role:'Software Engineer & Team Lead', company:'Pishtazane Asre Kavosh', location:'Tehran, Iran', period:'08/2009 – 07/2015', year:2009, bullets:[
-    'Led a team of 5 developers; analysis, design, and maintenance with C#.NET & SQL Server.'
-  ]}
+  {
+    role: 'Full-Stack Developer', company: 'Total E Integrated', location: 'Toronto, Canada', period: '10/2024 – Present', year: 2024, bullets: [
+      'Develop & maintain ERP modules (F&B, Retail, Tee Sheet, Payment).',
+      'Extend Angular components and .NET Core APIs with clean, scalable patterns.'
+    ]
+  },
+  {
+    role: 'Senior Software Engineer', company: 'arades GmbH', location: 'Frankfurt, Germany', period: '08/2023 – 07/2024', year: 2023, bullets: [
+      'Designed high-performance APIs with .NET Core & Node.js.',
+      'Integrated Microsoft Dynamics & Azure; built License Cost Calculator backend (~20% faster data flows).'
+    ]
+  },
+  {
+    role: 'Senior Software Engineer', company: 'Roma Parvaz', location: 'Tehran, Iran', period: '09/2022 – 08/2023', year: 2022, bullets: [
+      'Built B2B flight reservation backends using NestJS + RabbitMQ, with Redis caching.'
+    ]
+  },
+  {
+    role: 'Full Stack Software Developer', company: 'Self-Employed', location: 'Tehran, Iran', period: '05/2020 – 05/2022', year: 2020, bullets: [
+      'Delivered maintainable Node.js + MongoDB services; optimized NoSQL queries for performance.'
+    ]
+  },
+  {
+    role: 'Senior Software Engineer', company: 'GSS Int', location: 'Tehran, Iran', period: '08/2015 – 05/2020', year: 2015, bullets: [
+      'Developed WPF/C#.NET apps; refactored legacy modules for maintainability & performance.',
+      'Improved legacy cheque scanner QR reading speed by ~8×.'
+    ]
+  },
+  {
+    role: 'Software Engineer & Team Lead', company: 'Pishtazane Asre Kavosh', location: 'Tehran, Iran', period: '08/2009 – 07/2015', year: 2009, bullets: [
+      'Led a team of 5 developers; analysis, design, and maintenance with C#.NET & SQL Server.'
+    ]
+  }
 ];
 export const EDUCATION: Education[] = [
-  { degree:'B.Sc. in Software Engineering', school:'Islamic Azad University', period:'Graduated 09/2019' }
+  { degree: 'B.Sc. in Software Engineering', school: 'Islamic Azad University', period: 'Graduated 09/2019' }
 ];
 export const EXPERIENCES_FA: Experience[] = [
-  { role:'توسعه‌دهنده فول‌استک', company:'Total E Integrated', location:'تورنتو، کانادا', period:'۱۰/۲۰۲۴ – اکنون', year:2024, bullets:[
-    'توسعه و نگهداری ماژول‌های ERP (رستوران، خرده‌فروشی، رزرو، پرداخت).',
-    'گسترش کامپوننت‌های انگولار و APIهای .NET Core با الگوهای تمیز و مقیاس‌پذیر.'
-  ]},
-  { role:'مهندس ارشد نرم‌افزار', company:'arades GmbH', location:'فرانکفورت، آلمان', period:'۰۸/۲۰۲۳ – ۰۷/۲۰۲۴', year:2023, bullets:[
-    'طراحی APIهای پرفورمنس با .NET Core و Node.js.',
-    'ادغام Dynamics و Azure؛ بهبود سرعت جریان داده در بک‌اند محاسبه هزینه لایسنس (~۲۰٪).' 
-  ]},
-  { role:'مهندس ارشد نرم‌افزار', company:'Roma Parvaz', location:'تهران، ایران', period:'۰۹/۲۰۲۲ – ۰۸/۲۰۲۳', year:2022, bullets:[
-    'ساخت بک‌اند رزرو پرواز B2B با NestJS + RabbitMQ و کش ردی‌س.'
-  ]},
-  { role:'توسعه‌دهنده فول‌استک', company:'خویش‌فرما', location:'تهران، ایران', period:'۰۵/۲۰۲۰ – ۰۵/۲۰۲۲', year:2020, bullets:[
-    'تحویل سرویس‌های قابل‌نگهداری Node.js + MongoDB؛ بهینه‌سازی کوئری‌های NoSQL.'
-  ]},
-  { role:'مهندس ارشد نرم‌افزار', company:'GSS Int', location:'تهران، ایران', period:'۰۸/۲۰۱۵ – ۰۵/۲۰۲۰', year:2015, bullets:[
-    'توسعه برنامه‌های WPF/C#.NET؛ بازطراحی ماژول‌های قدیمی برای نگهداشت‌پذیری و پرفورمنس.',
-    'بهبود سرعت خواندن QR اسکنر چک قدیمی حدود ۸ برابر.'
-  ]},
-  { role:'مهندس نرم‌افزار و سرپرست تیم', company:'Pishtazane Asre Kavosh', location:'تهران، ایران', period:'۰۸/۲۰۰۹ – ۰۷/۲۰۱۵', year:2009, bullets:[
-    'رهبری تیم ۵ نفره؛ تحلیل، طراحی و نگهداری با C#.NET و SQL Server.'
-  ]}
+  {
+    role: 'توسعه‌دهنده فول‌استک', company: 'Total E Integrated', location: 'تورنتو، کانادا', period: '۱۰/۲۰۲۴ – اکنون', year: 2024, bullets: [
+      'توسعه و نگهداری ماژول‌های ERP (رستوران، خرده‌فروشی، رزرو، پرداخت).',
+      'گسترش کامپوننت‌های انگولار و APIهای .NET Core با الگوهای تمیز و مقیاس‌پذیر.'
+    ]
+  },
+  {
+    role: 'مهندس ارشد نرم‌افزار', company: 'arades GmbH', location: 'فرانکفورت، آلمان', period: '۰۸/۲۰۲۳ – ۰۷/۲۰۲۴', year: 2023, bullets: [
+      'طراحی APIهای پرفورمنس با .NET Core و Node.js.',
+      'ادغام Dynamics و Azure؛ بهبود سرعت جریان داده در بک‌اند محاسبه هزینه لایسنس (~۲۰٪).'
+    ]
+  },
+  {
+    role: 'مهندس ارشد نرم‌افزار', company: 'Roma Parvaz', location: 'تهران، ایران', period: '۰۹/۲۰۲۲ – ۰۸/۲۰۲۳', year: 2022, bullets: [
+      'ساخت بک‌اند رزرو پرواز B2B با NestJS + RabbitMQ و کش ردی‌س.'
+    ]
+  },
+  {
+    role: 'توسعه‌دهنده فول‌استک', company: 'خویش‌فرما', location: 'تهران، ایران', period: '۰۵/۲۰۲۰ – ۰۵/۲۰۲۲', year: 2020, bullets: [
+      'تحویل سرویس‌های قابل‌نگهداری Node.js + MongoDB؛ بهینه‌سازی کوئری‌های NoSQL.'
+    ]
+  },
+  {
+    role: 'مهندس ارشد نرم‌افزار', company: 'GSS Int', location: 'تهران، ایران', period: '۰۸/۲۰۱۵ – ۰۵/۲۰۲۰', year: 2015, bullets: [
+      'توسعه برنامه‌های WPF/C#.NET؛ بازطراحی ماژول‌های قدیمی برای نگهداشت‌پذیری و پرفورمنس.',
+      'بهبود سرعت خواندن QR اسکنر چک قدیمی حدود ۸ برابر.'
+    ]
+  },
+  {
+    role: 'مهندس نرم‌افزار و سرپرست تیم', company: 'Pishtazane Asre Kavosh', location: 'تهران، ایران', period: '۰۸/۲۰۰۹ – ۰۷/۲۰۱۵', year: 2009, bullets: [
+      'رهبری تیم ۵ نفره؛ تحلیل، طراحی و نگهداری با C#.NET و SQL Server.'
+    ]
+  }
 ];
 export const EDUCATION_FA: Education[] = [
-  { degree:'کارشناسی مهندسی نرم‌افزار', school:'دانشگاه آزاد اسلامی', period:'فارغ‌التحصیل ۰۹/۲۰۱۹' }
+  { degree: 'کارشناسی مهندسی نرم‌افزار', school: 'دانشگاه آزاد اسلامی', period: 'فارغ‌التحصیل ۰۹/۲۰۱۹' }
 ];
 export const TESTIMONIALS: Testimonial[] = [
   {
