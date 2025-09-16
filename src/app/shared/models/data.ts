@@ -49,14 +49,6 @@ export const CONTACT_INFO: ContactInfo[] = [
     icon: 'alternate_email'
   },
   {
-    type: 'linkedin',
-    label: 'LinkedIn',
-    labelFa: 'لینکدین',
-    value: 'linkedin.com/in/salehrezaei',
-    url: 'https://www.linkedin.com/in/salehrezaei/',
-    icon: 'link'
-  },
-  {
     type: 'whatsapp',
     label: 'WhatsApp',
     labelFa: 'واتساپ',
@@ -65,13 +57,21 @@ export const CONTACT_INFO: ContactInfo[] = [
     icon: 'chat'
   },
   {
-    type: 'github',
-    label: 'GitHub',
-    labelFa: 'گیت‌هاب',
-    value: 'github.com/Sully8665',
-    url: 'https://github.com/Sully8665/',
-    icon: 'code'
-  }
+    type: 'linkedin',
+    label: 'LinkedIn',
+    labelFa: 'لینکدین',
+    value: 'linkedin.com/in/salehrezaei',
+    url: 'https://www.linkedin.com/in/salehrezaei/',
+    icon: 'link'
+  },
+  // {
+  //   type: 'github',
+  //   label: 'GitHub',
+  //   labelFa: 'گیت‌هاب',
+  //   value: 'github.com/Sully8665',
+  //   url: 'https://github.com/Sully8665/',
+  //   icon: 'code'
+  // }
 ];
 export const NAV_LABELS = { about: 'About', skills: 'Skills', experience: 'Experience', education: 'Education', testimonials: 'Testimonials', blog: 'Blog', contact: 'Contact' };
 export const NAV_LABELS_FA = { about: 'درباره', skills: 'مهارت‌ها', experience: 'تجربیات', education: 'تحصیلات', testimonials: 'توصیه‌نامه‌ها', blog: 'وبلاگ', contact: 'ارتباط' };
