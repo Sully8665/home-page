@@ -32,11 +32,11 @@
       'Available for new projects and collaboration opportunities.' }}
     </p>
   </div>
-</div>
 
-<div class="toast-container" [class.show]="showToast">
-  <div class="toast-message" [class.success]="toastType === 'success'" [class.error]="toastType === 'error'">
-    <span>{{ toastMessage }}</span>
-    <button class="toast-close" (click)="showToast = false">×</button>
+  <div class="toast-container" [class.show]="showToast">
+    <div class="toast-message" [class.success]="toastType === 'success'" [class.error]="toastType === 'error'">
+      <span>{{ toastMessage }}</span>
+      <button class="toast-close" (click)="showToast = false">×</button>
+    </div>
   </div>
 </div>
