@@ -41,6 +41,7 @@ export class ContactComponent
   // }
   copyToClipboard(text: string, type: string)
   {
+    if (type === 'Email') text = text.replace('[at]', '@');
     navigator.clipboard.writeText(text).then(() =>
     {
       // Show success toast
