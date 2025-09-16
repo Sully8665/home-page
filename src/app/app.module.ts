@@ -12,11 +12,10 @@ import { AboutComponent } from './pages/about/about.component';
 import { SkillsComponent } from './pages/skills/skills.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
 import { EducationComponent } from './pages/education/education.component';
-import { ContactComponent } from './pages/contact/contact.component';
 import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, AboutComponent, SkillsComponent, ExperienceComponent, EducationComponent, ContactComponent, TestimonialsComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, AboutComponent, SkillsComponent, ExperienceComponent, EducationComponent, TestimonialsComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, MatIconModule],
   bootstrap: [AppComponent]
 })
