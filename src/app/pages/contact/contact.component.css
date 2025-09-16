@@ -130,6 +130,49 @@
   color: #333;
 }
 
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.3s ease;
+}
+
+.toast-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-message {
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast-message.success {
+  background-color: #4caf50;
+}
+
+.toast-message.error {
+  background-color: #f44336;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
 /* Dark theme adjustments */
 [data-bs-theme="dark"] .contact-btn[href*="github"]:hover .mi {
   color: #f0f6fc;

@@ -1,29 +1,25 @@
 <div class="card-flat">
   <div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.contact : SECTION_TITLES.contact }}</div>
-  
+
   <div class="contact-intro mb-4">
     <p class="text-muted">{{ lang.current==='fa' ? CONTACT_INTRO_FA : CONTACT_INTRO }}</p>
   </div>
 
   <div class="contact-buttons d-flex flex-wrap gap-3 justify-content-center">
-    <a *ngFor="let contact of contactInfo" 
-       [href]="contact.url"
-       [target]="contact.type === 'email' ? '_self' : '_blank'"
-       [rel]="contact.type === 'email' ? '' : 'noopener noreferrer'"
-       class="contact-btn"
-       (click)="onContactClick(contact)"
-       [title]="'Click to ' + (contact.type === 'email' ? 'send email' : 'open ' + contact.label)">
-      
+    <a *ngFor="let contact of contactInfo" [href]="contact.url" [target]="contact.type === 'email' ? '_self' : '_blank'"
+      [rel]="contact.type === 'email' ? '' : 'noopener noreferrer'" class="contact-btn"
+      (click)="onContactClick(contact)"
+      [title]="'Click to ' + (contact.type === 'email' ? 'send email' : 'open ' + contact.label)">
+
       <mat-icon class="mi" [attr.aria-hidden]="true">{{ contact.icon }}</mat-icon>
       <div class="contact-details">
         <span class="contact-label">{{ lang.current==='fa' ? contact.labelFa : contact.label }}</span>
         <span class="contact-value">{{ contact.value }}</span>
       </div>
-      
-      <button *ngIf="contact.type === 'email' || contact.type === 'whatsapp'" 
-              class="copy-btn"
-              (click)="copyToClipboard(contact.value, contact.label); $event.stopPropagation()"
-              [title]="'Copy ' + contact.label + ' to clipboard'">
+
+      <button *ngIf="contact.type === 'email' || contact.type === 'whatsapp'" class="copy-btn"
+        (click)="$event.preventDefault(); $event.stopPropagation(); copyToClipboard(contact.value, contact.label)"
+        [title]="'Copy ' + contact.label + ' to clipboard'">
         <mat-icon class="mi" [attr.aria-hidden]="true">content_copy</mat-icon>
       </button>
     </a>
@@ -31,9 +27,16 @@
 
   <div class="contact-note mt-4 text-center">
     <p class="text-muted small">
-      {{ lang.current==='fa' ? 
-        'برای پروژه‌های جدید و فرصت‌های همکاری در دسترس هستم.' : 
-        'Available for new projects and collaboration opportunities.' }}
+      {{ lang.current==='fa' ?
+      'برای پروژه‌های جدید و فرصت‌های همکاری در دسترس هستم.' :
+      'Available for new projects and collaboration opportunities.' }}
     </p>
+  </div>
+</div>
+
+<div class="toast-container" [class.show]="showToast">
+  <div class="toast-message" [class.success]="toastType === 'success'" [class.error]="toastType === 'error'">
+    <span>{{ toastMessage }}</span>
+    <button class="toast-close" (click)="showToast = false">×</button>
   </div>
 </div>
