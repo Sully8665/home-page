@@ -1,0 +1,33 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="onBackdropClick($event)">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3 class="modal-title">
+        {{ skillDetail ? (lang.current === 'fa' ? skillDetail.nameFa : skillDetail.name) : '' }}
+      </h3>
+      <button class="modal-close" (click)="onClose()" aria-label="Close modal">
+        <span>&times;</span>
+      </button>
+    </div>
+    
+    <div class="modal-body" *ngIf="skillDetail">
+      <div class="skill-experience">
+        <span class="experience-badge">
+          {{ lang.current === 'fa' ? skillDetail.experienceFa : skillDetail.experience }}
+        </span>
+      </div>
+      
+      <div class="skill-description">
+        <p>{{ lang.current === 'fa' ? skillDetail.descriptionFa : skillDetail.description }}</p>
+      </div>
+      
+      <div class="skill-projects" *ngIf="skillDetail.projects && skillDetail.projects.length > 0">
+        <h4>{{ lang.current === 'fa' ? 'پروژه‌های مرتبط:' : 'Related Projects:' }}</h4>
+        <div class="project-tags">
+          <span class="project-tag" *ngFor="let project of (lang.current === 'fa' ? skillDetail.projectsFa : skillDetail.projects)">
+            {{ project }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

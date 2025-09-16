@@ -9,16 +9,71 @@ export interface Experience {
 }
 export interface Education { degree: string; school: string; period?: string; }
 export interface Testimonial { name: string; role: string; relation: string; date: string; text: string; }
+export interface SkillDetail {
+  name: string;
+  nameFa: string;
+  experience: string;
+  experienceFa: string;
+  description: string;
+  descriptionFa: string;
+  projects?: string[];
+  projectsFa?: string[];
+}
 export const NAME = 'Saleh Rezaei';
 export const NAME_FA = 'صالح رضایی';
 export const ROLE = 'Senior Software Engineer';
 export const ROLE_FA = 'مهندس ارشد نرم‌افزار';
 export const CONTACT_INTRO = "I'm available via the following channels:";
 export const CONTACT_INTRO_FA = 'از راه‌های زیر در دسترس هستم:';
-export const NAV_LABELS = { about:'About', skills:'Skills', experience:'Experience', education:'Education', testimonials:'Testimonials', contact:'Contact' };
-export const NAV_LABELS_FA = { about:'درباره', skills:'مهارت‌ها', experience:'تجربیات', education:'تحصیلات', testimonials:'توصیه‌نامه‌ها', contact:'ارتباط' };
-export const SECTION_TITLES = { about:'About', skills:'Skills', experience:'Experience', education:'Education', testimonials:'Testimonials', contact:'Contact' };
-export const SECTION_TITLES_FA = { about:'درباره', skills:'مهارت‌ها', experience:'تجربیات', education:'تحصیلات', testimonials:'توصیه‌نامه‌ها', contact:'ارتباط' };
+
+export interface ContactInfo {
+  type: 'email' | 'linkedin' | 'whatsapp' | 'github';
+  label: string;
+  labelFa: string;
+  value: string;
+  url: string;
+  icon: string;
+}
+
+
+export const CONTACT_INFO: ContactInfo[] = [
+  {
+    type: 'email',
+    label: 'Email',
+    labelFa: 'ایمیل',
+    value: 'saleh.rezaei@gmail.com',
+    url: 'mailto:saleh.rezaei@gmail.com',
+    icon: 'alternate_email'
+  },
+  {
+    type: 'linkedin',
+    label: 'LinkedIn',
+    labelFa: 'لینکدین',
+    value: 'linkedin.com/in/salehrezaei',
+    url: 'https://www.linkedin.com/in/salehrezaei/',
+    icon: 'link'
+  },
+  {
+    type: 'whatsapp',
+    label: 'WhatsApp',
+    labelFa: 'واتساپ',
+    value: '+989108087461',
+    url: 'https://wa.me/989108087461',
+    icon: 'chat'
+  },
+  {
+    type: 'github',
+    label: 'GitHub',
+    labelFa: 'گیت‌هاب',
+    value: 'github.com/Sully8665',
+    url: 'https://github.com/Sully8665/',
+    icon: 'code'
+  }
+];
+export const NAV_LABELS = { about:'About', skills:'Skills', experience:'Experience', education:'Education', testimonials:'Testimonials', blog:'Blog', contact:'Contact' };
+export const NAV_LABELS_FA = { about:'درباره', skills:'مهارت‌ها', experience:'تجربیات', education:'تحصیلات', testimonials:'توصیه‌نامه‌ها', blog:'وبلاگ', contact:'ارتباط' };
+export const SECTION_TITLES = { about:'About', skills:'Skills', experience:'Experience', education:'Education', testimonials:'Testimonials', blog:'Blog', contact:'Contact' };
+export const SECTION_TITLES_FA = { about:'درباره', skills:'مهارت‌ها', experience:'تجربیات', education:'تحصیلات', testimonials:'توصیه‌نامه‌ها', blog:'وبلاگ', contact:'ارتباط' };
 export const SUMMARY = `Full-stack developer with a strong foundation in backend engineering and a focus on clean, scalable architecture. I specialize in building robust systems, optimizing complex SQL procedures, and maintaining high-performance applications across the stack. With a meticulous approach to refactoring and a deep understanding of system design, I bring both precision and long-term thinking to every project.
 
 Driven by clarity, efficiency, and continuous improvement.
@@ -31,6 +86,189 @@ export const SUMMARY_FA = `توسعه‌دهنده فول‌استک با تمر
 به دنبال فرصت‌های شغلی در هلند یا آلمان همراه با پشتیبانی جابجایی و ویزا هستم.`;
 export const SKILLS = ['C#','.NET','.NET Core','Angular','JavaScript','TypeScript','NodeJS','Express.js','Nest.js','RESTful APIs','WebSocket','Entity Framework','EF Core','SQL Server','Postgres','MongoDB','Redis','Git'];
 export const SKILLS_FA = ['#C','دات‌نت','دات‌نت کور','انگولار','جاوااسکریپت','تایپ‌اسکریپت','نود جی‌اس','اکسپرس','نست‌جی‌اس','APIهای REST','وب‌سوکت','Entity Framework','EF Core','SQL Server','پستگرس','مانگو‌دی‌بی','ردیس','گیت'];
+
+export const SKILL_DETAILS: SkillDetail[] = [
+  {
+    name: 'C#',
+    nameFa: 'سی‌شارپ',
+    experience: '10+ years',
+    experienceFa: '۱۰+ سال',
+    description: 'Extensive experience in building enterprise applications, ERP systems, and desktop applications. Strong background in object-oriented programming, LINQ, and async/await patterns.',
+    descriptionFa: 'تجربه گسترده در ساخت برنامه‌های سازمانی، سیستم‌های ERP و برنامه‌های دسکتاپ. پایه قوی در برنامه‌نویسی شی‌گرا، LINQ و الگوهای async/await.',
+    projects: ['ERP Modules', 'POS Systems', 'Desktop Applications'],
+    projectsFa: ['ماژول‌های ERP', 'سیستم‌های POS', 'برنامه‌های دسکتاپ']
+  },
+  {
+    name: '.NET',
+    nameFa: 'دات‌نت',
+    experience: '10+ years',
+    experienceFa: '۱۰+ سال',
+    description: 'Deep expertise in .NET Framework and .NET Core development. Experience with WPF, WinForms, and web applications. Strong knowledge of dependency injection, middleware, and configuration management.',
+    descriptionFa: 'تخصص عمیق در توسعه .NET Framework و .NET Core. تجربه با WPF، WinForms و برنامه‌های وب. دانش قوی در dependency injection، middleware و مدیریت تنظیمات.',
+    projects: ['Enterprise Applications', 'Web APIs', 'Desktop Tools'],
+    projectsFa: ['برنامه‌های سازمانی', 'APIهای وب', 'ابزارهای دسکتاپ']
+  },
+  {
+    name: '.NET Core',
+    nameFa: 'دات‌نت کور',
+    experience: '5+ years',
+    experienceFa: '۵+ سال',
+    description: 'Modern .NET development with cross-platform capabilities. Experience with microservices architecture, containerization, and cloud deployment. Strong focus on performance optimization and scalability.',
+    descriptionFa: 'توسعه مدرن .NET با قابلیت‌های چندپلتفرمه. تجربه با معماری میکروسرویس، کانتینریزاسیون و استقرار ابری. تمرکز قوی بر بهینه‌سازی عملکرد و مقیاس‌پذیری.',
+    projects: ['Microservices', 'Cloud Applications', 'High-Performance APIs'],
+    projectsFa: ['میکروسرویس‌ها', 'برنامه‌های ابری', 'APIهای پرفورمنس']
+  },
+  {
+    name: 'Angular',
+    nameFa: 'انگولار',
+    experience: '5+ years',
+    experienceFa: '۵+ سال',
+    description: 'Enterprise-level Angular development with focus on component architecture, reactive programming, and state management. Experience with Angular Material, RxJS, and performance optimization.',
+    descriptionFa: 'توسعه انگولار در سطح سازمانی با تمرکز بر معماری کامپوننت، برنامه‌نویسی reactive و مدیریت state. تجربه با Angular Material، RxJS و بهینه‌سازی عملکرد.',
+    projects: ['Enterprise Dashboards', 'Admin Panels', 'SPA Applications'],
+    projectsFa: ['داشبوردهای سازمانی', 'پنل‌های مدیریت', 'برنامه‌های SPA']
+  },
+  {
+    name: 'JavaScript',
+    nameFa: 'جاوااسکریپت',
+    experience: '8+ years',
+    experienceFa: '۸+ سال',
+    description: 'Comprehensive JavaScript development including ES6+, DOM manipulation, and modern frameworks. Strong understanding of asynchronous programming, closures, and functional programming concepts.',
+    descriptionFa: 'توسعه جامع جاوااسکریپت شامل ES6+، دستکاری DOM و فریمورک‌های مدرن. درک قوی از برنامه‌نویسی asynchronous، closures و مفاهیم برنامه‌نویسی تابعی.',
+    projects: ['Frontend Applications', 'Node.js Backends', 'Browser Extensions'],
+    projectsFa: ['برنامه‌های فرانت‌اند', 'بک‌اندهای Node.js', 'اکستنشن‌های مرورگر']
+  },
+  {
+    name: 'TypeScript',
+    nameFa: 'تایپ‌اسکریپت',
+    experience: '6+ years',
+    experienceFa: '۶+ سال',
+    description: 'Strong TypeScript expertise for large-scale applications. Experience with advanced type system features, generics, decorators, and strict type checking. Focus on maintainable and scalable code.',
+    descriptionFa: 'تخصص قوی در TypeScript برای برنامه‌های بزرگ. تجربه با ویژگی‌های پیشرفته سیستم نوع، generics، decorators و بررسی دقیق نوع. تمرکز بر کد قابل‌نگهداری و مقیاس‌پذیر.',
+    projects: ['Enterprise Applications', 'API Development', 'Frontend Frameworks'],
+    projectsFa: ['برنامه‌های سازمانی', 'توسعه API', 'فریمورک‌های فرانت‌اند']
+  },
+  {
+    name: 'NodeJS',
+    nameFa: 'نود جی‌اس',
+    experience: '6+ years',
+    experienceFa: '۶+ سال',
+    description: 'Server-side JavaScript development with Node.js. Experience with Express.js, NestJS, and various middleware. Strong knowledge of event-driven architecture and non-blocking I/O.',
+    descriptionFa: 'توسعه جاوااسکریپت سمت سرور با Node.js. تجربه با Express.js، NestJS و middlewareهای مختلف. دانش قوی از معماری event-driven و I/O غیرمسدودکننده.',
+    projects: ['REST APIs', 'Real-time Applications', 'Microservices'],
+    projectsFa: ['APIهای REST', 'برنامه‌های Real-time', 'میکروسرویس‌ها']
+  },
+  {
+    name: 'Express.js',
+    nameFa: 'اکسپرس',
+    experience: '5+ years',
+    experienceFa: '۵+ سال',
+    description: 'Rapid web application development with Express.js. Experience with middleware integration, routing, and API design. Strong focus on performance and security best practices.',
+    descriptionFa: 'توسعه سریع برنامه‌های وب با Express.js. تجربه با ادغام middleware، routing و طراحی API. تمرکز قوی بر عملکرد و بهترین شیوه‌های امنیتی.',
+    projects: ['Web APIs', 'Backend Services', 'RESTful Services'],
+    projectsFa: ['APIهای وب', 'سرویس‌های بک‌اند', 'سرویس‌های RESTful']
+  },
+  {
+    name: 'Nest.js',
+    nameFa: 'نست‌جی‌اس',
+    experience: '3+ years',
+    experienceFa: '۳+ سال',
+    description: 'Enterprise-grade Node.js framework development. Experience with decorators, dependency injection, and modular architecture. Strong knowledge of TypeScript integration and testing.',
+    descriptionFa: 'توسعه فریمورک Node.js در سطح سازمانی. تجربه با decorators، dependency injection و معماری ماژولار. دانش قوی از ادغام TypeScript و تست.',
+    projects: ['Enterprise APIs', 'Microservices', 'Scalable Backends'],
+    projectsFa: ['APIهای سازمانی', 'میکروسرویس‌ها', 'بک‌اندهای مقیاس‌پذیر']
+  },
+  {
+    name: 'RESTful APIs',
+    nameFa: 'APIهای REST',
+    experience: '8+ years',
+    experienceFa: '۸+ سال',
+    description: 'Design and implementation of RESTful web services. Experience with API versioning, authentication, rate limiting, and documentation. Strong focus on API security and performance optimization.',
+    descriptionFa: 'طراحی و پیاده‌سازی سرویس‌های وب RESTful. تجربه با versioning API، احراز هویت، محدودیت نرخ و مستندسازی. تمرکز قوی بر امنیت API و بهینه‌سازی عملکرد.',
+    projects: ['Enterprise APIs', 'Third-party Integrations', 'Mobile Backends'],
+    projectsFa: ['APIهای سازمانی', 'ادغام‌های شخص ثالث', 'بک‌اندهای موبایل']
+  },
+  {
+    name: 'WebSocket',
+    nameFa: 'وب‌سوکت',
+    experience: '4+ years',
+    experienceFa: '۴+ سال',
+    description: 'Real-time communication implementation using WebSocket technology. Experience with Socket.io, real-time data streaming, and bidirectional communication patterns.',
+    descriptionFa: 'پیاده‌سازی ارتباط Real-time با استفاده از تکنولوژی WebSocket. تجربه با Socket.io، استریم داده‌های Real-time و الگوهای ارتباط دوطرفه.',
+    projects: ['Real-time Chat', 'Live Dashboards', 'Gaming Applications'],
+    projectsFa: ['چت Real-time', 'داشبوردهای زنده', 'برنامه‌های بازی']
+  },
+  {
+    name: 'Entity Framework',
+    nameFa: 'Entity Framework',
+    experience: '8+ years',
+    experienceFa: '۸+ سال',
+    description: 'Object-relational mapping with Entity Framework. Experience with Code First, Database First approaches, migrations, and performance optimization. Strong knowledge of LINQ and query optimization.',
+    descriptionFa: 'نگاشت شی‌-رابطه‌ای با Entity Framework. تجربه با رویکردهای Code First، Database First، migrations و بهینه‌سازی عملکرد. دانش قوی از LINQ و بهینه‌سازی کوئری.',
+    projects: ['Data Access Layers', 'ORM Implementations', 'Database Migrations'],
+    projectsFa: ['لایه‌های دسترسی داده', 'پیاده‌سازی‌های ORM', 'migrationهای دیتابیس']
+  },
+  {
+    name: 'EF Core',
+    nameFa: 'EF Core',
+    experience: '5+ years',
+    experienceFa: '۵+ سال',
+    description: 'Modern Entity Framework Core development. Experience with cross-platform database access, performance improvements, and new features. Strong focus on async operations and query optimization.',
+    descriptionFa: 'توسعه مدرن Entity Framework Core. تجربه با دسترسی چندپلتفرمه به دیتابیس، بهبودهای عملکرد و ویژگی‌های جدید. تمرکز قوی بر عملیات async و بهینه‌سازی کوئری.',
+    projects: ['Cross-platform Apps', 'High-performance Queries', 'Modern Data Access'],
+    projectsFa: ['برنامه‌های چندپلتفرمه', 'کوئری‌های پرفورمنس', 'دسترسی مدرن داده']
+  },
+  {
+    name: 'SQL Server',
+    nameFa: 'SQL Server',
+    experience: '10+ years',
+    experienceFa: '۱۰+ سال',
+    description: 'Advanced SQL Server development and administration. Experience with stored procedures, functions, triggers, and performance tuning. Strong knowledge of indexing strategies and query optimization.',
+    descriptionFa: 'توسعه و مدیریت پیشرفته SQL Server. تجربه با stored procedureها، functions، triggers و performance tuning. دانش قوی از استراتژی‌های indexing و بهینه‌سازی کوئری.',
+    projects: ['Database Design', 'Performance Tuning', 'Stored Procedures'],
+    projectsFa: ['طراحی دیتابیس', 'Performance Tuning', 'Stored Procedureها']
+  },
+  {
+    name: 'Postgres',
+    nameFa: 'پستگرس',
+    experience: '4+ years',
+    experienceFa: '۴+ سال',
+    description: 'PostgreSQL development and optimization. Experience with advanced features, JSON support, and performance tuning. Strong knowledge of indexing and query optimization techniques.',
+    descriptionFa: 'توسعه و بهینه‌سازی PostgreSQL. تجربه با ویژگی‌های پیشرفته، پشتیبانی JSON و performance tuning. دانش قوی از تکنیک‌های indexing و بهینه‌سازی کوئری.',
+    projects: ['Web Applications', 'Data Analytics', 'JSON Storage'],
+    projectsFa: ['برنامه‌های وب', 'تحلیل داده', 'ذخیره JSON']
+  },
+  {
+    name: 'MongoDB',
+    nameFa: 'مانگو‌دی‌بی',
+    experience: '5+ years',
+    experienceFa: '۵+ سال',
+    description: 'NoSQL database development with MongoDB. Experience with document modeling, aggregation pipelines, and performance optimization. Strong knowledge of indexing strategies and sharding.',
+    descriptionFa: 'توسعه دیتابیس NoSQL با MongoDB. تجربه با مدل‌سازی document، aggregation pipelineها و بهینه‌سازی عملکرد. دانش قوی از استراتژی‌های indexing و sharding.',
+    projects: ['Document Stores', 'Real-time Applications', 'Scalable Backends'],
+    projectsFa: ['ذخیره‌گاه‌های Document', 'برنامه‌های Real-time', 'بک‌اندهای مقیاس‌پذیر']
+  },
+  {
+    name: 'Redis',
+    nameFa: 'ردیس',
+    experience: '4+ years',
+    experienceFa: '۴+ سال',
+    description: 'In-memory data structure store implementation. Experience with caching strategies, session management, and real-time features. Strong knowledge of Redis data types and performance optimization.',
+    descriptionFa: 'پیاده‌سازی ذخیره‌گاه ساختار داده در حافظه. تجربه با استراتژی‌های caching، مدیریت session و ویژگی‌های Real-time. دانش قوی از انواع داده Redis و بهینه‌سازی عملکرد.',
+    projects: ['Caching Systems', 'Session Stores', 'Real-time Features'],
+    projectsFa: ['سیستم‌های Caching', 'ذخیره‌گاه‌های Session', 'ویژگی‌های Real-time']
+  },
+  {
+    name: 'Git',
+    nameFa: 'گیت',
+    experience: '10+ years',
+    experienceFa: '۱۰+ سال',
+    description: 'Version control and collaboration with Git. Experience with branching strategies, merge conflicts resolution, and team workflows. Strong knowledge of Git hooks, rebasing, and advanced Git features.',
+    descriptionFa: 'کنترل نسخه و همکاری با Git. تجربه با استراتژی‌های branching، حل تعارض merge و workflowهای تیمی. دانش قوی از Git hooks، rebasing و ویژگی‌های پیشرفته Git.',
+    projects: ['Version Control', 'Team Collaboration', 'CI/CD Pipelines'],
+    projectsFa: ['کنترل نسخه', 'همکاری تیمی', 'خطوط CI/CD']
+  }
+];
 export const EXPERIENCES: Experience[] = [
   { role:'Full-Stack Developer', company:'Total E Integrated', location:'Toronto, Canada', period:'10/2024 – Present', year:2024, bullets:[
     'Develop & maintain ERP modules (F&B, Retail, Tee Sheet, Payment).',
@@ -129,3 +367,4 @@ export const TESTIMONIALS_FA: Testimonial[] = [
     text: 'صالح طی سال‌ها در کاوش و GSS به‌عنوان توسعه‌دهنده نرم‌افزار با من روی پروژه‌های مختلف کار کرده است. او نمونه نادری از یک برنامه‌نویس مؤثر و همکار است و در این سال‌ها از نحوه انجام کار عالی او تحت تأثیر قرار گرفته‌ام. تخصص او به ما کمک کرد راهکارهای کارآمدتری ارائه دهیم و پروژه‌های نوآورانه‌ای توسعه دهیم. علاوه بر مهارت عالی برنامه‌نویسی، بیش از همه قابل‌اعتماد و پاسخ‌گو بودن او را می‌پسندم. انرژی او برای به نتیجه رساندن کارها مسری بود و به ما کمک کرد به اهداف بزرگ برسیم. صالح یادگیرنده سریعی است و توانایی کار روی چند وظیفه به‌طور هم‌زمان را دارد و با تمرکز بالا کار باکیفیت تحویل می‌دهد. مطمئنم برای هر شرکتی که به آن بپیوندد دارایی ارزشمندی خواهد بود و قطعاً او را به‌عنوان مهندس ارشد نرم‌افزار توصیه می‌کنم.'
   }
 ];
+

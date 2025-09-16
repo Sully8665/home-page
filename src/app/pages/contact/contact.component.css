@@ -1,0 +1,196 @@
+.contact-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-intro p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  min-width: 200px;
+  max-width: 280px;
+  flex: 1;
+}
+
+.contact-btn:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 25px rgba(14, 165, 164, 0.15);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(14, 165, 164, 0.1);
+}
+
+.contact-btn .mi {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.contact-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--fg);
+}
+
+.contact-value {
+  font-size: 0.85rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.copy-btn:hover {
+  background-color: var(--bs-secondary-bg);
+  color: var(--accent);
+  opacity: 1;
+}
+
+.copy-btn .mi {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.contact-note {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.contact-note p {
+  margin: 0;
+  font-style: italic;
+}
+
+/* Special styling for different contact types */
+.contact-btn[href*="mailto:"]:hover .mi {
+  color: #ea4335;
+}
+
+.contact-btn[href*="linkedin"]:hover .mi {
+  color: #0077b5;
+}
+
+.contact-btn[href*="wa.me"]:hover .mi {
+  color: #25d366;
+}
+
+.contact-btn[href*="github"]:hover .mi {
+  color: #333;
+}
+
+/* Dark theme adjustments */
+[data-bs-theme="dark"] .contact-btn[href*="github"]:hover .mi {
+  color: #f0f6fc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-btn {
+    padding: 0.875rem 1rem;
+    gap: 0.5rem;
+  }
+  
+  .contact-btn .mi {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .contact-label {
+    font-size: 0.85rem;
+  }
+  
+  .contact-value {
+    font-size: 0.8rem;
+  }
+}
+
+/* Animation for contact buttons */
+@keyframes contactPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(var(--bs-primary-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0);
+  }
+}
+
+.contact-btn:focus {
+  outline: none;
+  animation: contactPulse 1.5s infinite;
+}
+
+.contact-btn:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+  animation: none;
+}
