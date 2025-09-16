@@ -1,35 +1,40 @@
 import { Component } from '@angular/core';
-import { SKILLS, SKILLS_FA, SECTION_TITLES, SECTION_TITLES_FA, SKILL_DETAILS, SkillDetail } from '../../shared/models/data';
 import { LanguageService } from '../../shared/language.service';
+import { SECTION_TITLES, SECTION_TITLES_FA, SKILL_DETAILS, SkillDetail, SKILLS } from '../../shared/models/data';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent {
+export class SkillsComponent
+{
   selectedSkill: SkillDetail | null = null;
   isModalOpen = false;
 
-  constructor(public lang: LanguageService) {}
+  constructor(public lang: LanguageService) { }
 
   SECTION_TITLES = SECTION_TITLES;
   SECTION_TITLES_FA = SECTION_TITLES_FA;
 
-  get skills() {
+  get skills()
+  {
     return SKILLS;
   }
 
-  get skillDetails() {
+  get skillDetails()
+  {
     return SKILL_DETAILS;
   }
 
-  onSkillClick(skillName: string) {
+  onSkillClick(skillName: string)
+  {
     this.selectedSkill = this.skillDetails.find(skill => skill.name === skillName) || null;
     this.isModalOpen = true;
   }
 
-  onCloseModal() {
+  onCloseModal()
+  {
     this.isModalOpen = false;
     this.selectedSkill = null;
   }
