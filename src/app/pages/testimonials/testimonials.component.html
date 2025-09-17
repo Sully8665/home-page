@@ -1,4 +1,5 @@
-<div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.testimonials : SECTION_TITLES.testimonials }}</div>
+<div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.testimonials : SECTION_TITLES.testimonials }}
+</div>
 <div class="row g-3">
   <div class="col-12" *ngFor="let t of testimonials">
     <div class="card-flat h-100">
@@ -6,10 +7,9 @@
         <div class="fw-semibold">{{t.name}}</div>
       </div>
       <div class="text-muted small mb-1">{{t.role}}</div>
-      <div class="text-muted small mb-2">{{t.relation}} • {{t.date}}</div>
+      <div class="text-muted small mb-2">{{t.relation}}</div>
       <div>{{t.text}}</div>
     </div>
   </div>
-  
-</div>
 
+</div>

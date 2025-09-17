@@ -9,7 +9,7 @@ export interface Experience
   year?: number;
 }
 export interface Education { degree: string; school: string; period?: string; }
-export interface Testimonial { name: string; role: string; relation: string; date: string; text: string; }
+export interface Testimonial { name: string; role: string; relation: string; text: string; }
 export interface SkillDetail
 {
   name: string;
@@ -352,22 +352,19 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Keyvan Arj',
     role: 'GenAI, Machine Vision, Cryptography, Software Engineering',
-    relation: 'Managed Saleh directly',
-    date: 'Oct 15, 2021',
+    relation: 'Direct manager',
     text: "I've known Saleh for 13 years, when he was very young and started the software development. He tries to do his best and is a nice teammate collaborate with other team members to move forward. He always tries to experience new challenges with appreciated commitment. I really like him."
   },
   {
     name: 'Mohsen Saffari',
     role: 'Lead AI Engineer',
-    relation: 'Worked with Saleh on the same team',
-    date: 'Oct 14, 2021',
+    relation: 'Worked with me on the same team',
     text: 'I worked with Saleh for about 8 years at Kavosh and GSS company. He is smart, responsible, and a finisher in software development and industrial projects. He is a very good learner and his professional and nice manner in team works helps a company to progress continuously. He knows very well that how to finish software and develop a robust application. He tries to learn new development software and tools always and does his best by them. I definitely recommend Saleh as a Senior Software Developer.'
   },
   {
     name: 'Eric Akhlaghi',
     role: 'Senior Software Engineer',
-    relation: 'Managed Saleh directly',
-    date: 'Jul 27, 2021',
+    relation: 'Direct manager',
     text: 'Saleh has worked with me as a software developer on various projects for many years at Kavosh and GSS International. He is a rare example of an effective and collaborative software programmer and through the years, I was impressed by his manner of doing a great job. His expertise as a programmer is considerable and it helped our company to come up with more efficient solutions and develop innovative projects. In addition to his wonderful programming skill, what I appreciate most about him is how reliable and responsive he is. His energy to make things happen was contagious and it helped us achieve great goals. Saleh is a fast-learner and has the ability to work on multiple tasks and still be focused and deliver quality work. I am confident that he would be a great asset for any company he joins and I definitely would recommend Saleh as Senior Software Engineer.'
   }
 ];
@@ -375,22 +372,19 @@ export const TESTIMONIALS_FA: Testimonial[] = [
   {
     name: 'کیوان ارج',
     role: 'هوش مصنوعی مولد، بینایی ماشین، رمزنگاری، مهندسی نرم‌افزار',
-    relation: 'مدیر مستقیم صالح',
-    date: '۱۵ اکتبر ۲۰۲۱',
+    relation: 'مدیر مستقیم',
     text: 'من صالح را از ۱۳ سال پیش می‌شناسم، زمانی که خیلی جوان بود و برنامه‌نویسی را شروع کرده بود. او همیشه بهترین تلاش خود را می‌کند و هم‌تیمی خوبی است که با سایر اعضای تیم همکاری می‌کند تا پیش بروند. او همیشه سعی می‌کند چالش‌های جدید را با تعهد قابل‌تقدیری تجربه کند. من واقعاً او را دوست دارم.'
   },
   {
     name: 'محسن صفاری',
     role: 'مهندس ارشد هوش مصنوعی',
-    relation: 'هم‌تیمی صالح',
-    date: '۱۴ اکتبر ۲۰۲۱',
+    relation: 'هم‌تیمی',
     text: 'من حدود ۸ سال در شرکت‌های کاوش و جی‌اس‌اس با صالح کار کردم. او باهوش، مسئولیت‌پذیر و تمام‌کننده پروژه‌های نرم‌افزاری و صنعتی است. یادگیرنده بسیار خوبی است و رفتار حرفه‌ای و خوشایندش در کار تیمی به پیشرفت مستمر شرکت کمک می‌کند. او خیلی خوب می‌داند چگونه نرم‌افزار را به سرانجام برساند و یک اپلیکیشن پایدار توسعه دهد. همیشه دنبال یادگیری ابزارها و فناوری‌های جدید است و بهترین عملکرد را با آنها ارائه می‌دهد. قطعاً صالح را به‌عنوان مهندس ارشد نرم‌افزار توصیه می‌کنم.'
   },
   {
     name: 'اریک اخلاقي',
     role: 'مهندس ارشد نرم‌افزار',
-    relation: 'مدیر مستقیم صالح',
-    date: '۲۷ ژوئیه ۲۰۲۱',
+    relation: 'مدیر مستقیم',
     text: 'صالح طی سال‌ها در کاوش و GSS به‌عنوان توسعه‌دهنده نرم‌افزار با من روی پروژه‌های مختلف کار کرده است. او نمونه نادری از یک برنامه‌نویس مؤثر و همکار است و در این سال‌ها از نحوه انجام کار عالی او تحت تأثیر قرار گرفته‌ام. تخصص او به ما کمک کرد راهکارهای کارآمدتری ارائه دهیم و پروژه‌های نوآورانه‌ای توسعه دهیم. علاوه بر مهارت عالی برنامه‌نویسی، بیش از همه قابل‌اعتماد و پاسخ‌گو بودن او را می‌پسندم. انرژی او برای به نتیجه رساندن کارها مسری بود و به ما کمک کرد به اهداف بزرگ برسیم. صالح یادگیرنده سریعی است و توانایی کار روی چند وظیفه به‌طور هم‌زمان را دارد و با تمرکز بالا کار باکیفیت تحویل می‌دهد. مطمئنم برای هر شرکتی که به آن بپیوندد دارایی ارزشمندی خواهد بود و قطعاً او را به‌عنوان مهندس ارشد نرم‌افزار توصیه می‌کنم.'
   }
 ];
