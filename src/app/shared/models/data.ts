@@ -81,12 +81,12 @@ export const SUMMARY = `Full-stack developer with a strong foundation in backend
 
 Driven by clarity, efficiency, and continuous improvement.
 
-Currently seeking opportunities in the Netherlands or Germany with relocation and visa sponsorship support.`;
+Currently seeking opportunities with relocation and visa sponsorship support.`;
 export const SUMMARY_FA = `توسعه‌دهنده فول‌استک با تمرکز بر معماری تمیز و مقیاس‌پذیر و پایه قوی در بک‌اند. در ساخت سیستم‌های پایدار، بهینه‌سازی رویه‌های پیچیده SQL و نگهداری برنامه‌های پرفورمنس بالا تخصص دارم. با رویکردی دقیق به بازطراحی و درک عمیق از طراحی سیستم، دقت و نگاه بلندمدت را به هر پروژه می‌آورم.
 
 با انگیزه شفافیت، کارایی و بهبود مستمر.
 
-به دنبال فرصت‌های شغلی در هلند یا آلمان همراه با پشتیبانی جابجایی و ویزا هستم.`;
+به دنبال فرصت‌های شغلی همراه با پشتیبانی جابجایی و ویزا هستم.`;
 export const SKILLS = ['C#', '.NET', '.NET Core', 'Angular', 'JavaScript', 'TypeScript', 'NodeJS', 'Express.js', 'Nest.js', 'RESTful APIs', 'WebSocket', 'Entity Framework', 'EF Core', 'SQL Server', 'Postgres', 'MongoDB', 'Redis', 'Git'];
 export const SKILLS_FA = ['#C', 'دات‌نت', 'دات‌نت کور', 'انگولار', 'جاوااسکریپت', 'تایپ‌اسکریپت', 'نود جی‌اس', 'اکسپرس', 'نست‌جی‌اس', 'APIهای REST', 'وب‌سوکت', 'Entity Framework', 'EF Core', 'SQL Server', 'پستگرس', 'مانگو‌دی‌بی', 'ردیس', 'گیت'];
 
