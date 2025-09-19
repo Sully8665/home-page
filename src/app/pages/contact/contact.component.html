@@ -10,7 +10,7 @@
       (click)="onContactClick(contact)"
       [title]="'Click to ' + (contact.type === 'email' ? 'send email' : 'open ' + contact.label)">
 
-      <mat-icon class="mi" [attr.aria-hidden]="true">{{ contact.icon }}</mat-icon>
+      <i [class]="contact.icon" aria-hidden="true"></i>
       <div class="contact-details">
         <span class="contact-label">{{ lang.current==='fa' ? contact.labelFa : contact.label }}</span>
         <span class="contact-value">{{ contact.value }}</span>
@@ -19,10 +19,11 @@
       <button *ngIf="contact.type === 'email' || contact.type === 'whatsapp'" class="copy-btn"
         (click)="$event.preventDefault(); $event.stopPropagation(); copyToClipboard(contact.value, contact.label)"
         [title]="'Copy ' + contact.label + ' to clipboard'">
-        <mat-icon class="mi" [attr.aria-hidden]="true">content_copy</mat-icon>
+        <i class="bi bi-clipboard"></i>
       </button>
     </a>
   </div>
+
 
   <div class="contact-note mt-4 text-center">
     <p class="text-muted small">

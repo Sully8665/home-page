@@ -46,7 +46,7 @@ export const CONTACT_INFO: ContactInfo[] = [
     labelFa: 'ایمیل',
     value: 'saleh.rezaei[at]gmail.com',
     url: 'mailto:saleh.rezaei@gmail.com',
-    icon: 'alternate_email'
+    icon: 'bi bi-linkedin'
   },
   {
     type: 'whatsapp',
@@ -54,7 +54,7 @@ export const CONTACT_INFO: ContactInfo[] = [
     labelFa: 'واتساپ',
     value: '+989108087461',
     url: 'https://wa.me/989108087461',
-    icon: 'chat'
+    icon: 'bi bi-whatsapp'
   },
   {
     type: 'linkedin',
@@ -62,7 +62,7 @@ export const CONTACT_INFO: ContactInfo[] = [
     labelFa: 'لینکدین',
     value: 'linkedin.com/in/salehrezaei',
     url: 'https://www.linkedin.com/in/salehrezaei/',
-    icon: 'link'
+    icon: 'bi bi-envelope'
   },
   // {
   //   type: 'github',
