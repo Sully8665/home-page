@@ -1,0 +1,113 @@
+.articles-section {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .loading {
+    color: #aaa;
+    font-style: italic;
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .article-card {
+    background: var(--card-bg, #1e1e1e);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .image-wrapper {
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .content {
+      padding: 1.5rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary, #fff);
+      }
+
+      p {
+        color: var(--text-secondary, #ccc);
+        font-size: 0.9rem;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+      }
+
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #aaa;
+
+        a {
+          text-decoration: none;
+          color: #00bcd4;
+          font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .more-btn {
+    margin-top: 2rem;
+
+    a {
+      display: inline-block;
+      background: #00bcd4;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #009bb2;
+      }
+    }
+  }
+}

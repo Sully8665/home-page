@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { LanguageService } from '../../shared/language.service';
+import { LanguageService } from '../../services/language.service';
 import { EXPERIENCES, EXPERIENCES_FA, SECTION_TITLES, SECTION_TITLES_FA } from '../../shared/models/data';
 
 @Component({ selector: 'app-experience', templateUrl: './experience.component.html' })

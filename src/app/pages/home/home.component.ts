@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LanguageService } from '../../shared/language.service';
+import { LanguageService } from '../../services/language.service';
 import { NAME, NAME_FA, ROLE, ROLE_FA, SUMMARY, SUMMARY_FA } from '../../shared/models/data';
 @Component({
     selector: 'app-home', templateUrl: './home.component.html',

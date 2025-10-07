@@ -21,6 +21,7 @@ export interface SkillDetail
   projects?: string[];
   projectsFa?: string[];
 }
+export const DevToProfile = 'https://dev.to/sully8665';
 export const NAME = 'Saleh Rezaei';
 export const NAME_FA = 'صالح رضایی';
 export const ROLE = 'Senior Software Engineer';
@@ -38,6 +39,13 @@ export interface ContactInfo
   icon: string;
 }
 
+export const MORE = 'View all';
+export const MOREFA = 'دیدن همه';
+
+export const ARTICLES_INFO = {
+  title: 'Latest Articles',
+  titleFa: 'آخرین مقالات'
+};
 
 export const CONTACT_INFO: ContactInfo[] = [
   {
@@ -73,8 +81,8 @@ export const CONTACT_INFO: ContactInfo[] = [
   //   icon: 'code'
   // }
 ];
-export const NAV_LABELS = { about: 'About', skills: 'Skills', experience: 'Experience', education: 'Education', testimonials: 'Testimonials', blog: 'Blog', contact: 'Contact' };
-export const NAV_LABELS_FA = { about: 'درباره', skills: 'مهارت‌ها', experience: 'تجربیات', education: 'تحصیلات', testimonials: 'توصیه‌نامه‌ها', blog: 'وبلاگ', contact: 'ارتباط' };
+export const NAV_LABELS = { about: 'About', skills: 'Skills', experience: 'Experience', education: 'Education', testimonials: 'Testimonials', blog: 'Blog', contact: 'Contact', article: 'Articles' };
+export const NAV_LABELS_FA = { about: 'درباره', skills: 'مهارت‌ها', experience: 'تجربیات', education: 'تحصیلات', testimonials: 'توصیه‌نامه‌ها', blog: 'وبلاگ', contact: 'ارتباط', article: 'مقالات' };
 export const SECTION_TITLES = { about: 'About', skills: 'Skills', experience: 'Experience', education: 'Education', testimonials: 'Testimonials', blog: 'Blog', contact: 'Contact' };
 export const SECTION_TITLES_FA = { about: 'درباره', skills: 'مهارت‌ها', experience: 'تجربیات', education: 'تحصیلات', testimonials: 'توصیه‌نامه‌ها', blog: 'وبلاگ', contact: 'ارتباط' };
 export const SUMMARY = `Full-stack developer with a strong foundation in backend engineering and a focus on clean, scalable architecture. I specialize in building robust systems, optimizing complex SQL procedures, and maintaining high-performance applications across the stack. With a meticulous approach to refactoring and a deep understanding of system design, I bring both precision and long-term thinking to every project.

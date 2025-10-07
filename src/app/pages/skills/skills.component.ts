@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LanguageService } from '../../shared/language.service';
+import { LanguageService } from '../../services/language.service';
 import { SECTION_TITLES, SECTION_TITLES_FA, SKILL_DETAILS, SkillDetail, SKILLS } from '../../shared/models/data';
 
 @Component({

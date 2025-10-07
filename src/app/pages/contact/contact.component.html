@@ -7,7 +7,6 @@
   <div class="contact-buttons d-flex flex-wrap gap-3 justify-content-center">
     <a *ngFor="let contact of contactInfo" [href]="contact.url" [target]="contact.type === 'email' ? '_self' : '_blank'"
       [rel]="contact.type === 'email' ? '' : 'noopener noreferrer'" class="contact-btn"
-      (click)="onContactClick(contact)"
       [title]="'Click to ' + (contact.type === 'email' ? 'send email' : 'open ' + contact.label)">
 
       <i [class]="contact.icon" aria-hidden="true"></i>

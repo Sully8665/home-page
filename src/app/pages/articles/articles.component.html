@@ -1,0 +1,29 @@
+<div class="section-title">{{ lang.current==='fa' ? ARTICLES_INFO.titleFa : ARTICLES_INFO.title }}</div>
+<section class="articles-section" [@listAnimation]>
+    <!-- <h1 class="title">{{ lang.current==='fa' ? ARTICLES_INFO.titleFa : ARTICLES_INFO.title }}</h1> -->
+
+    <div *ngIf="loading" class="loading">Loading articles...</div>
+
+    <div class="articles-grid" *ngIf="!loading">
+        <div class="article-card" *ngFor="let post of articles">
+            <div class="image-wrapper" *ngIf="post.cover_image">
+                <img [src]="post.cover_image" alt="{{ post.title }}" />
+            </div>
+
+            <div class="content">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <div class="meta">
+                    <span>{{ post.readable_publish_date }}</span>
+                    <a [href]="post.url" target="_blank" rel="noopener">Read →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="more-btn" *ngIf="!loading">
+        <a [href]="profile" target="_blank" rel="noopener">
+            {{ lang.current==='fa' ? MOREFA : MORE }}
+        </a>
+    </div>
+</section>

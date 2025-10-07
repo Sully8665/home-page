@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LanguageService } from '../../shared/language.service';
+import { LanguageService } from '../../services/language.service';
 import { CONTACT_INFO, CONTACT_INTRO, CONTACT_INTRO_FA, ContactInfo, SECTION_TITLES, SECTION_TITLES_FA } from '../../shared/models/data';
 
 @Component({
@@ -25,20 +25,6 @@ export class ContactComponent
     return CONTACT_INFO;
   }
 
-  onContactClick(contact: ContactInfo)
-  {
-    // Add analytics or tracking here if needed
-    console.log(`Contact clicked: ${ contact.type } - ${ contact.value }`);
-  }
-
-  // copyToClipboard(text: string, type: string) {
-  //   navigator.clipboard.writeText(text).then(() => {
-  //     // You could add a toast notification here
-  //     console.log(`${type} copied to clipboard: ${text}`);
-  //   }).catch(err => {
-  //     console.error('Failed to copy: ', err);
-  //   });
-  // }
   copyToClipboard(text: string, type: string)
   {
     if (type === 'Email') text = text.replace('[at]', '@');
