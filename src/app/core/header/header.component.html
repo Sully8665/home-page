@@ -22,12 +22,6 @@
         <li class="nav-item"><a href="#contact" class="nav-link" [class.active]="activeSectionId==='contact'">{{
             currentLang==='fa' ? NAV_FA.contact : NAV.contact }}</a></li>
       </ul>
-      <div class="ms-3">
-        <button class="btn btn-sm btn-outline-accent me-2" (click)="toggleTheme()">{{ theme==='light'?'Dark':'Light'
-          }}</button>
-        <button class="btn btn-sm btn-outline-secondary" (click)="toggleLang()">{{ currentLang==='fa' ? 'EN' : 'FA'
-          }}</button>
-      </div>
     </div>
   </div>
 </nav>
