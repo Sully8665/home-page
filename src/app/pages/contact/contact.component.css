@@ -1,3 +1,21 @@
+/* Ensure contact section has proper background - same as other sections */
+#contact .card-flat {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+  border-radius: 1rem !important;
+  padding: 1.25rem !important;
+}
+
+/* Override any conflicting styles */
+#contact .card-flat * {
+  background: transparent !important;
+}
+
+#contact .card-flat .contact-btn {
+  background: var(--card) !important;
+}
+
 .contact-intro {
   text-align: center;
   margin-bottom: 2rem;
@@ -21,13 +39,13 @@
   align-items: center;
   gap: 0.75rem;
   border: 1px solid var(--border);
-  background: var(--card);
+  background: var(--card) !important;
   color: var(--fg);
   padding: 1rem 1.25rem;
   border-radius: 12px;
   box-shadow: var(--shadow);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   min-width: 200px;
   max-width: 280px;

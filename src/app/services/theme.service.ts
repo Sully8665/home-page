@@ -40,6 +40,10 @@ export class ThemeService {
     const body = document.body;
     const html = document.documentElement;
     
+    // Add transition class for smooth animation
+    body.classList.add('theme-transitioning');
+    html.classList.add('theme-transitioning');
+    
     // Remove existing theme classes
     body.classList.remove(this.DARK_THEME, this.LIGHT_THEME);
     html.classList.remove(this.DARK_THEME, this.LIGHT_THEME);
@@ -56,6 +60,12 @@ export class ThemeService {
     
     // Update subject
     this.themeSubject.next(theme);
+    
+    // Remove transition class after animation completes
+    setTimeout(() => {
+      body.classList.remove('theme-transitioning');
+      html.classList.remove('theme-transitioning');
+    }, 400);
   }
 
   toggleTheme(): void {

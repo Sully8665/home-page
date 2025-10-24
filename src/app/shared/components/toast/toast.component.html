@@ -1,0 +1,14 @@
+<div class="toast-container" [class.show]="showToast">
+  <div class="toast-message" 
+       [class.success]="currentToast?.type === 'success'" 
+       [class.error]="currentToast?.type === 'error'"
+       [class.info]="currentToast?.type === 'info'">
+    <div class="toast-content">
+      <i [class]="getToastIcon()" class="toast-icon"></i>
+      <span class="toast-text">{{ currentToast?.message }}</span>
+    </div>
+    <button class="toast-close" (click)="hideToast()" aria-label="Close notification">
+      <i class="bi bi-x"></i>
+    </button>
+  </div>
+</div>

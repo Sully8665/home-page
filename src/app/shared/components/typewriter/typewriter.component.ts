@@ -2,30 +2,8 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-typewriter',
-  template: `
-    <span class="typewriter-text" [innerHTML]="displayedText"></span>
-    <span class="cursor" [class.blinking]="showCursor">|</span>
-  `,
-  styles: [`
-    .typewriter-text {
-      display: inline;
-    }
-    
-    .cursor {
-      color: var(--accent);
-      font-weight: bold;
-      animation: blink 1s infinite;
-    }
-    
-    .cursor.blinking {
-      animation: blink 1s infinite;
-    }
-    
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
-  `]
+  templateUrl: './typewriter.component.html',
+  styleUrls: ['./typewriter.component.scss']
 })
 export class TypewriterComponent implements OnInit, OnDestroy {
   @Input() text: string = '';

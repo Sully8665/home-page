@@ -1,0 +1,14 @@
+<div class="skill-item">
+  <div class="skill-info">
+    <span class="skill-name">{{ skill.name }}</span>
+    <span class="skill-percentage">{{ skill.percentage }}%</span>
+  </div>
+  <div class="skill-bar-container">
+    <div 
+      #skillBar
+      class="skill-bar" 
+      [style.--skill-width]="skill.percentage + '%'"
+      [class.animate]="isVisible">
+    </div>
+  </div>
+</div>

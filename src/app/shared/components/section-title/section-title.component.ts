@@ -3,84 +3,8 @@ import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'app-section-title',
-  template: `
-    <h2 class="section-title">
-      <span class="title-text">{{ getTitle() }}</span>
-      <span class="title-accent"></span>
-    </h2>
-  `,
-  styles: [`
-    .section-title {
-      position: relative;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      color: var(--fg);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .title-text {
-      position: relative;
-      z-index: 2;
-      background: var(--bg);
-      padding-right: 1rem;
-    }
-
-    .title-accent {
-      flex: 1;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      position: relative;
-      border-radius: 1px;
-    }
-
-    .title-accent::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: -2px;
-      width: 8px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
-    /* RTL Support */
-    [dir="rtl"] .title-text {
-      padding-right: 0;
-      padding-left: 1rem;
-    }
-
-    [dir="rtl"] .title-accent::after {
-      right: auto;
-      left: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-    }
-
-    /* Animation */
-    .section-title {
-      animation: fadeInUp 0.6s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  `]
+  templateUrl: './section-title.component.html',
+  styleUrls: ['./section-title.component.scss']
 })
 export class SectionTitleComponent {
   @Input() titleEn!: string;
