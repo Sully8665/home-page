@@ -1,0 +1,33 @@
+<app-section-title 
+  titleEn="Achievements & Certifications" 
+  titleFa="دستاوردها و گواهینامه‌ها">
+</app-section-title>
+
+<div class="achievements-container">
+  <div *ngFor="let type of Object.keys(achievementsByType)" class="achievement-type-section mb-5">
+    <h3 class="achievement-type-title">{{ getTypeLabel(type) }}</h3>
+    <div class="row g-4">
+      <div class="col-lg-6" *ngFor="let achievement of achievementsByType[type]">
+        <div class="achievement-card interactive-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i [class]="achievement.icon" *ngIf="achievement.icon.startsWith('bi')"></i>
+              <span *ngIf="!achievement.icon.startsWith('bi')">{{ achievement.icon }}</span>
+            </div>
+            <div class="achievement-info">
+              <h4 class="achievement-title">{{ lang.current==='fa' ? achievement.titleFa : achievement.title }}</h4>
+              <div class="achievement-issuer">{{ lang.current==='fa' ? achievement.issuerFa : achievement.issuer }}</div>
+              <div class="achievement-date">{{ achievement.date }}</div>
+            </div>
+          </div>
+          <p class="achievement-description">
+            {{ lang.current==='fa' ? achievement.descriptionFa : achievement.description }}
+          </p>
+          <div class="achievement-type-badge" [class]="'type-' + achievement.type">
+            {{ getTypeLabel(achievement.type) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,8 @@
-<div class="section-title">{{ lang.current==='fa' ? ARTICLES_INFO.titleFa : ARTICLES_INFO.title }}</div>
+<app-section-title 
+  titleEn="Latest Articles" 
+  titleFa="آخرین مقالات">
+</app-section-title>
 <section class="articles-section" [@listAnimation]>
-    <!-- <h1 class="title">{{ lang.current==='fa' ? ARTICLES_INFO.titleFa : ARTICLES_INFO.title }}</h1> -->
 
     <div *ngIf="loading" class="loading">Loading articles...</div>
 

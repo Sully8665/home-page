@@ -1,5 +1,10 @@
-<div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.skills : SECTION_TITLES.skills }}</div>
-<div class="card-flat">
+<app-section-title 
+  titleEn="Skills" 
+  titleFa="مهارت‌ها">
+</app-section-title>
+
+<!-- Skills Overview -->
+<div class="card-flat mb-4">
   <div class="d-flex flex-wrap">
     <span *ngFor="let s of skills" class="badge-skill clickable" role="listitem">
       {{s}}

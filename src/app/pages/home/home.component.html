@@ -1,19 +1,26 @@
-<section class="hero">
+<section class="hero" itemscope itemtype="https://schema.org/Person">
   <div class="row align-items-center g-4">
     <div class="col-md-3 text-center">
-      <img src="assets/avatar.png" class="rounded-circle avatar-soft" width="140" height="140" alt="Saleh Rezaei"
-        loading="lazy">
+      <img src="assets/avatar.png" class="rounded-circle avatar-soft" width="140" height="140" 
+           alt="Saleh Rezaei - Senior Software Engineer" loading="lazy" itemprop="image">
     </div>
     <div class="col-md-9">
-      <h1 class="fw-bold mb-1">{{ lang.current==='fa' ? NAME_FA : NAME }}</h1>
-      <h2 class="text-muted fs-6 mb-3">{{ lang.current==='fa' ? ROLE_FA : ROLE }}</h2>
-      <p class="mb-3">{{ summary }}</p>
+      <h1 class="fw-bold mb-1" itemprop="name">{{ lang.current==='fa' ? NAME_FA : NAME }}</h1>
+      <h2 class="text-muted fs-6 mb-3" itemprop="jobTitle">
+        <app-typewriter 
+          [text]="lang.current==='fa' ? ROLE_FA : ROLE" 
+          [speed]="100" 
+          [delay]="500">
+        </app-typewriter>
+      </h2>
+      <p class="mb-3" itemprop="description">{{ summary }}</p>
       <div class="d-flex flex-wrap gap-2">
-        <a class="btn btn-accent" href="assets/Saleh-Rezaei-Resume.pdf" download>{{ lang.current==='fa' ? 'دانلود رزومه'
-          : 'Download Resume' }}</a>
-        <a class="btn btn-outline-accent" href="#experience">{{ lang.current==='fa' ? 'مشاهده تجربیات' : 'View
-          Experience' }}</a>
-        <a class="btn btn-outline-secondary" href="#contact">{{ lang.current==='fa' ? 'ارتباط' : 'Get in Touch' }}</a>
+        <a class="btn btn-accent" href="assets/Saleh-Rezaei-Resume.pdf" download 
+           aria-label="Download Saleh Rezaei's Resume">{{ lang.current==='fa' ? 'دانلود رزومه' : 'Download Resume' }}</a>
+        <a class="btn btn-outline-accent" href="#experience" 
+           aria-label="View professional experience">{{ lang.current==='fa' ? 'مشاهده تجربیات' : 'View Experience' }}</a>
+        <a class="btn btn-outline-secondary" href="#contact" 
+           aria-label="Get in touch with Saleh Rezaei">{{ lang.current==='fa' ? 'ارتباط' : 'Get in Touch' }}</a>
       </div>
     </div>
   </div>

@@ -1,4 +1,7 @@
-<div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.about : SECTION_TITLES.about }}</div>
+<app-section-title 
+  titleEn="About" 
+  titleFa="درباره">
+</app-section-title>
 <div class="card-flat">
-  <p class="mb-0">{{ summary }}</p>
+  <p class="mb-0" itemprop="description">{{ summary }}</p>
 </div>

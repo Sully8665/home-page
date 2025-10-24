@@ -1,4 +1,7 @@
-<div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.experience : SECTION_TITLES.experience }}</div>
+<app-section-title 
+  titleEn="Experience" 
+  titleFa="تجربیات">
+</app-section-title>
 <div class="timeline">
   <div class="timeline-item mb-3" *ngFor="let exp of visibleExperiences(); let i = index">
     <div class="card-flat">

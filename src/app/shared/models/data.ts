@@ -71,15 +71,7 @@ export const CONTACT_INFO: ContactInfo[] = [
     value: 'linkedin.com/in/salehrezaei',
     url: 'https://www.linkedin.com/in/salehrezaei/',
     icon: 'bi bi-envelope'
-  },
-  // {
-  //   type: 'github',
-  //   label: 'GitHub',
-  //   labelFa: 'گیت‌هاب',
-  //   value: 'github.com/Sully8665',
-  //   url: 'https://github.com/Sully8665/',
-  //   icon: 'code'
-  // }
+  }
 ];
 export const NAV_LABELS = { about: 'About', skills: 'Skills', experience: 'Experience', education: 'Education', testimonials: 'Testimonials', blog: 'Blog', contact: 'Contact', article: 'Articles' };
 export const NAV_LABELS_FA = { about: 'درباره', skills: 'مهارت‌ها', experience: 'تجربیات', education: 'تحصیلات', testimonials: 'توصیه‌نامه‌ها', blog: 'وبلاگ', contact: 'ارتباط', article: 'مقالات' };
@@ -96,7 +88,6 @@ export const SUMMARY_FA = `توسعه‌دهنده فول‌استک با تمر
 
 به دنبال فرصت‌های شغلی همراه با پشتیبانی جابجایی و ویزا هستم.`;
 export const SKILLS = ['C#', '.NET', '.NET Core', 'Angular', 'JavaScript', 'TypeScript', 'NodeJS', 'Express.js', 'Nest.js', 'RESTful APIs', 'WebSocket', 'Entity Framework', 'EF Core', 'SQL Server', 'Postgres', 'MongoDB', 'Redis', 'Git'];
-export const SKILLS_FA = ['#C', 'دات‌نت', 'دات‌نت کور', 'انگولار', 'جاوااسکریپت', 'تایپ‌اسکریپت', 'نود جی‌اس', 'اکسپرس', 'نست‌جی‌اس', 'APIهای REST', 'وب‌سوکت', 'Entity Framework', 'EF Core', 'SQL Server', 'پستگرس', 'مانگو‌دی‌بی', 'ردیس', 'گیت'];
 
 export const SKILL_DETAILS: SkillDetail[] = [
   {
@@ -394,6 +385,151 @@ export const TESTIMONIALS_FA: Testimonial[] = [
     role: 'مهندس ارشد نرم‌افزار',
     relation: 'مدیر مستقیم',
     text: 'صالح طی سال‌ها در کاوش و GSS به‌عنوان توسعه‌دهنده نرم‌افزار با من روی پروژه‌های مختلف کار کرده است. او نمونه نادری از یک برنامه‌نویس مؤثر و همکار است و در این سال‌ها از نحوه انجام کار عالی او تحت تأثیر قرار گرفته‌ام. تخصص او به ما کمک کرد راهکارهای کارآمدتری ارائه دهیم و پروژه‌های نوآورانه‌ای توسعه دهیم. علاوه بر مهارت عالی برنامه‌نویسی، بیش از همه قابل‌اعتماد و پاسخ‌گو بودن او را می‌پسندم. انرژی او برای به نتیجه رساندن کارها مسری بود و به ما کمک کرد به اهداف بزرگ برسیم. صالح یادگیرنده سریعی است و توانایی کار روی چند وظیفه به‌طور هم‌زمان را دارد و با تمرکز بالا کار باکیفیت تحویل می‌دهد. مطمئنم برای هر شرکتی که به آن بپیوندد دارایی ارزشمندی خواهد بود و قطعاً او را به‌عنوان مهندس ارشد نرم‌افزار توصیه می‌کنم.'
+  }
+];
+
+export interface Project {
+  id: number;
+  title: string;
+  titleFa: string;
+  description: string;
+  descriptionFa: string;
+  technologies: string[];
+  imageUrl?: string;
+  githubUrl?: string;
+  liveUrl?: string;
+  featured: boolean;
+  category: 'web' | 'mobile' | 'desktop' | 'api' | 'other';
+}
+
+export const PROJECTS: Project[] = [
+  {
+    id: 5,
+    title: 'Personal Portfolio Website',
+    titleFa: 'وب‌سایت پورتفولیو شخصی',
+    description: 'Modern, responsive portfolio website built with Angular, featuring advanced animations and SEO optimization.',
+    descriptionFa: 'وب‌سایت پورتفولیو مدرن و ریسپانسیو ساخته شده با انگولار، دارای انیمیشن‌های پیشرفته و بهینه‌سازی SEO.',
+    technologies: ['Angular', 'TypeScript', 'Bootstrap', 'SCSS'],
+    featured: true,
+    category: 'web',
+    githubUrl: 'https://github.com/Sully8665/personal-website'
+  },
+  {
+    id: 1,
+    title: 'ERP System Modules',
+    titleFa: 'ماژول‌های سیستم ERP',
+    description: 'Full-stack ERP modules for F&B, Retail, Tee Sheet, and Payment processing with Angular frontend and .NET Core backend.',
+    descriptionFa: 'ماژول‌های فول‌استک ERP برای رستوران، خرده‌فروشی، رزرو و پردازش پرداخت با فرانت‌اند انگولار و بک‌اند .NET Core.',
+    technologies: ['Angular', '.NET Core', 'SQL Server', 'Entity Framework'],
+    featured: true,
+    category: 'web'
+  },
+  {
+    id: 2,
+    title: 'License Cost Calculator',
+    titleFa: 'محاسبه‌گر هزینه لایسنس',
+    description: 'High-performance backend API with Microsoft Dynamics integration and Azure services, improving data flow by ~20%.',
+    descriptionFa: 'API بک‌اند پرفورمنس با ادغام Microsoft Dynamics و سرویس‌های Azure، بهبود جریان داده حدود ۲۰٪.',
+    technologies: ['.NET Core', 'Microsoft Dynamics', 'Azure', 'Node.js'],
+    featured: true,
+    category: 'api'
+  },
+  {
+    id: 3,
+    title: 'B2B Flight Reservation System',
+    titleFa: 'سیستم رزرو پرواز B2B',
+    description: 'Backend system for B2B flight reservations using NestJS, RabbitMQ, and Redis caching for real-time processing.',
+    descriptionFa: 'سیستم بک‌اند رزرو پرواز B2B با استفاده از NestJS، RabbitMQ و کش Redis برای پردازش Real-time.',
+    technologies: ['NestJS', 'RabbitMQ', 'Redis', 'TypeScript'],
+    featured: true,
+    category: 'api'
+  },
+  {
+    id: 4,
+    title: 'Cheque Scanner QR Reader',
+    titleFa: 'خواننده QR اسکنر چک',
+    description: 'Desktop application with QR code reading capabilities, improved reading speed by ~8x through optimization.',
+    descriptionFa: 'برنامه دسکتاپ با قابلیت خواندن کد QR، بهبود سرعت خواندن حدود ۸ برابر از طریق بهینه‌سازی.',
+    technologies: ['C#', 'WPF', '.NET Framework'],
+    featured: true,
+    category: 'desktop'
+  }
+];
+
+export interface Achievement {
+  id: number;
+  title: string;
+  titleFa: string;
+  description: string;
+  descriptionFa: string;
+  issuer: string;
+  issuerFa: string;
+  date: string;
+  type: 'certification' | 'award' | 'recognition' | 'milestone' | 'achievement';
+  icon: string;
+  url?: string;
+}
+
+export const ACHIEVEMENTS: Achievement[] = [
+  {
+    id: 2,
+    title: '15+ Years Software Development Experience',
+    titleFa: 'بیش از ۱۵ سال تجربه توسعه نرم‌افزار',
+    description: 'Extensive experience in software development across multiple technologies and industries.',
+    descriptionFa: 'تجربه گسترده در توسعه نرم‌افزار در چندین فناوری و صنعت.',
+    issuer: 'Professional Milestone',
+    issuerFa: 'نقطه عطف حرفه‌ای',
+    date: '2024',
+    type: 'milestone',
+    icon: 'bi bi-calendar-check-fill'
+  },
+  {
+    id: 5,
+    title: 'API Performance Improvement',
+    titleFa: 'بهبود عملکرد API',
+    description: 'Designed high-performance APIs with .NET Core & Node.js, improving data flows by ~20%.',
+    descriptionFa: 'طراحی APIهای پرفورمنس با .NET Core و Node.js، بهبود جریان داده حدود ۲۰٪.',
+    issuer: 'arades GmbH',
+    issuerFa: 'arades GmbH',
+    date: '2023',
+    type: 'achievement',
+    icon: 'bi bi-lightning-fill'
+  },
+  {
+    id: 4,
+    title: 'Performance Optimization Achievement',
+    titleFa: 'دستاورد بهینه‌سازی عملکرد',
+    description: 'Improved legacy cheque scanner QR reading speed by ~8x through advanced optimization techniques.',
+    descriptionFa: 'بهبود سرعت خواندن QR اسکنر چک قدیمی حدود ۸ برابر از طریق تکنیک‌های بهینه‌سازی پیشرفته.',
+    issuer: 'GSS International',
+    issuerFa: 'GSS International',
+    date: '2019',
+    type: 'achievement',
+    icon: 'bi bi-speedometer2'
+  },
+  {
+    id: 1,
+    title: 'B.Sc. Software Engineering',
+    titleFa: 'کارشناسی مهندسی نرم‌افزار',
+    description: 'Bachelor of Science in Software Engineering from Islamic Azad University.',
+    descriptionFa: 'کارشناسی مهندسی نرم‌افزار از دانشگاه آزاد اسلامی.',
+    issuer: 'Islamic Azad University',
+    issuerFa: 'دانشگاه آزاد اسلامی',
+    date: '2019',
+    type: 'certification',
+    icon: 'bi bi-mortarboard-fill'
+  },
+  {
+    id: 3,
+    title: 'Team Leadership & Mentoring',
+    titleFa: 'رهبری تیم و راهنمایی',
+    description: 'Led a team of 5 developers in analysis, design, and maintenance of enterprise software solutions.',
+    descriptionFa: 'رهبری تیم ۵ نفره توسعه‌دهنده در تحلیل، طراحی و نگهداری راهکارهای نرم‌افزاری سازمانی.',
+    issuer: 'Pishtazane Asre Kavosh',
+    issuerFa: 'پیشتازان عصر کاوش',
+    date: '2015',
+    type: 'recognition',
+    icon: 'bi bi-people-fill'
   }
 ];
 

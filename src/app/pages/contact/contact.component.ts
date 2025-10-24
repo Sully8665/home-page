@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
+import { ClipboardService } from '../../services/clipboard.service';
+import { ToastService } from '../../services/toast.service';
 import { CONTACT_INFO, CONTACT_INTRO, CONTACT_INTRO_FA, ContactInfo, SECTION_TITLES, SECTION_TITLES_FA } from '../../shared/models/data';
 
 @Component({
@@ -9,7 +11,11 @@ import { CONTACT_INFO, CONTACT_INTRO, CONTACT_INTRO_FA, ContactInfo, SECTION_TIT
 })
 export class ContactComponent
 {
-  constructor(public lang: LanguageService) { }
+  constructor(
+    public lang: LanguageService,
+    private clipboardService: ClipboardService,
+    private toastService: ToastService
+  ) { }
 
   SECTION_TITLES = SECTION_TITLES;
   SECTION_TITLES_FA = SECTION_TITLES_FA;
@@ -25,36 +31,15 @@ export class ContactComponent
     return CONTACT_INFO;
   }
 
-  copyToClipboard(text: string, type: string)
+  async copyToClipboard(text: string, type: string)
   {
     if (type === 'Email') text = text.replace('[at]', '@');
-    navigator.clipboard.writeText(text).then(() =>
-    {
-      // Show success toast
-      this.toastMessage = `${ type } copied to clipboard!`;
-      this.toastType = 'success';
-      this.showToast = true;
-
-      // Auto hide after 3 seconds
-      setTimeout(() =>
-      {
-        this.showToast = false;
-      }, 3000);
-
-    }).catch(err =>
-    {
-      // Show error toast
-      this.toastMessage = 'Failed to copy to clipboard';
-      this.toastType = 'error';
-      this.showToast = true;
-
-      // Auto hide after 3 seconds
-      setTimeout(() =>
-      {
-        this.showToast = false;
-      }, 3000);
-
-      console.error('Failed to copy: ', err);
-    });
+    
+    const success = await this.clipboardService.copyToClipboard(text);
+    if (success) {
+      this.toastService.success(`${type} copied to clipboard!`);
+    } else {
+      this.toastService.error('Failed to copy to clipboard');
+    }
   }
 }

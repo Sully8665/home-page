@@ -1,5 +1,8 @@
 
-<div class="section-title">{{ lang.current==='fa' ? SECTION_TITLES_FA.education : SECTION_TITLES.education }}</div>
+<app-section-title 
+  titleEn="Education" 
+  titleFa="تحصیلات">
+</app-section-title>
 <div class="row g-3">
   <div class="col-md-12 col-lg-12" *ngFor="let ed of education">
     <div class="card-flat h-100">

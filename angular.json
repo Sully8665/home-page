@@ -25,6 +25,11 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
+            "optimization": {
+              "scripts": true,
+              "styles": true,
+              "fonts": true
+            },
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]

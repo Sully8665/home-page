@@ -1,4 +1,53 @@
+# Robots.txt for Saleh Rezaei Portfolio Website
+# https://salehrezaei.com
+
 User-agent: *
 Allow: /
 
+# Disallow private assets but allow important public files
+Disallow: /assets/
+Allow: /assets/avatar.png
+Allow: /assets/Saleh-Rezaei-Resume.pdf
+Allow: /assets/og/
+Allow: /assets/icons/
+
+# Disallow development and build files
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.ts$
+Disallow: /*.scss$
+Disallow: /angular.json
+Disallow: /package.json
+Disallow: /tsconfig.json
+
+# Disallow temporary and cache files
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /dist/
+Disallow: /coverage/
+Disallow: /e2e/
+
+# Allow specific file types
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.html$
+Allow: /*.xml$
+Allow: /*.ico$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.pdf$
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://salehrezaei.com/sitemap.xml
+
+# Additional sitemaps
+# Sitemap: https://salehrezaei.com/sitemap-images.xml
+
+# Host directive (if needed)
+# Host: https://salehrezaei.com

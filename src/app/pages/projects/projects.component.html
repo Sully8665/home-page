@@ -1,0 +1,31 @@
+<app-section-title 
+  titleEn="Projects" 
+  titleFa="پروژه‌ها">
+</app-section-title>
+
+<!-- Featured Projects -->
+<div class="featured-projects mb-5">
+  <h3 class="mb-4">{{ lang.current==='fa' ? 'پروژه‌های برجسته' : 'Featured Projects' }}</h3>
+  <div class="row g-4">
+    <div class="col-lg-6" *ngFor="let project of featuredProjects">
+      <div class="project-card interactive-card">
+        <div class="project-header">
+          <h4 class="project-title">{{ lang.current==='fa' ? project.titleFa : project.title }}</h4>
+          <div class="project-category badge bg-primary">{{ project.category.toUpperCase() }}</div>
+        </div>
+        <p class="project-description">{{ lang.current==='fa' ? project.descriptionFa : project.description }}</p>
+        <div class="project-technologies">
+          <span class="tech-badge" *ngFor="let tech of project.technologies">{{ tech }}</span>
+        </div>
+        <div class="project-links" *ngIf="project.githubUrl || project.liveUrl">
+          <a [href]="project.githubUrl" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm" *ngIf="project.githubUrl">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+          <a [href]="project.liveUrl" target="_blank" rel="noopener" class="btn btn-accent btn-sm" *ngIf="project.liveUrl">
+            <i class="bi bi-box-arrow-up-right"></i> Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
