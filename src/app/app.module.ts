@@ -26,12 +26,20 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { AchievementsComponent } from './pages/achievements/achievements.component';
 import { GitHubStatsComponent } from './shared/components/github-stats/github-stats.component';
 import { SectionTitleComponent } from './shared/components/section-title/section-title.component';
+import { ToastComponent } from './shared/components/toast/toast.component';
+import { ThemeToggleComponent } from './shared/components/theme-toggle/theme-toggle.component';
+import { FloatingMenuComponent } from './shared/components/floating-menu/floating-menu.component';
+import { GlobalErrorHandlerService } from './core/error-handler/global-error-handler.service';
+import { ErrorHandler } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, AboutComponent, SkillsComponent, ExperienceComponent,
     TestimonialsComponent, EducationComponent, ContactComponent, SkillModalComponent, ArticlesComponent, AnimatedSkillBarComponent,
-    ParticleBackgroundComponent, ScrollProgressComponent, TypewriterComponent, ProjectsComponent, AchievementsComponent, GitHubStatsComponent, SectionTitleComponent],
+    ParticleBackgroundComponent, ScrollProgressComponent, TypewriterComponent, ProjectsComponent, AchievementsComponent, GitHubStatsComponent, SectionTitleComponent, ToastComponent, ThemeToggleComponent, FloatingMenuComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, MatIconModule, BrowserAnimationsModule, HttpClientModule],
+  providers: [
+    { provide: ErrorHandler, useClass: GlobalErrorHandlerService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

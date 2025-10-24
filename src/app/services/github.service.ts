@@ -43,7 +43,10 @@ export class GitHubService {
       `${this.baseUrl}/users/${this.username}/repos?sort=updated&per_page=100`
     ).pipe(
       catchError(error => {
-        console.error('Error fetching repositories:', error);
+        // Only log if it's not a rate limit or network error
+        if (!error.status || (error.status !== 403 && error.status !== 429)) {
+          console.error('Error fetching repositories:', error);
+        }
         return of([]);
       })
     );

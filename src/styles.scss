@@ -1,7 +1,7 @@
 
 /* ---- Harmonized palette (Light/Dark) ---- */
 :root { --accent:#0ea5a4; --accent-2:#2296f3; --bg:#ffffff; --fg:#1e293b; --muted:#64748b; --card:#ffffff; --border:#e2e8f0; --shadow:0 10px 30px rgba(2,12,27,0.06); }
-:root.theme-dark { --bg:#0e131a; --fg:#e5eaf0; --muted:#fffeee; --card:#131a22; --border:#1e2630; --shadow:0 10px 30px rgba(0,0,0,0.35); }
+:root.dark-theme { --bg:#0e131a; --fg:#e5eaf0; --muted:#fffeee; --card:#131a22; --border:#1e2630; --shadow:0 10px 30px rgba(0,0,0,0.35); }
 * { transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
 body { background: var(--bg); color: var(--fg); }
 a { color: var(--accent-2); } a:hover { opacity:.9; }
@@ -20,7 +20,7 @@ a { color: var(--accent-2); } a:hover { opacity:.9; }
 .navbar .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='currentColor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 .text-muted { color: var(--muted) !important; }
 .alert-info-theme { background: rgba(34,150,243,.10); border:1px solid rgba(34,150,243,.35); color: var(--fg); border-radius:.75rem; padding:.75rem 1rem; }
-.theme-dark .alert-info-theme { background: rgba(34,150,243,.12); border-color: rgba(34,150,243,.45); }
+.dark-theme .alert-info-theme { background: rgba(34,150,243,.12); border-color: rgba(34,150,243,.45); }
 .contact-buttons .contact-btn { display:inline-flex; align-items:center; gap:.5rem; border:1px solid var(--border); background: var(--card); color: var(--fg); padding:.55rem .9rem; border-radius:.75rem; box-shadow: var(--shadow); }
 .contact-buttons .contact-btn:hover { border-color: var(--accent); box-shadow: 0 6px 18px rgba(14,165,164,.18); }
 .contact-buttons .contact-btn .mi { font-size: 20px; width: 20px; height: 20px; display:inline-flex; align-items:center; justify-content:center; }
@@ -28,7 +28,7 @@ a { color: var(--accent-2); } a:hover { opacity:.9; }
 .toast-inline { position: fixed; right: 1rem; bottom: 1rem; background: var(--card); color: var(--fg); border:1px solid var(--border); border-radius:.5rem; padding:.5rem .75rem; box-shadow: var(--shadow); opacity:0; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease; }
 .toast-inline.show { opacity:1; transform: translateY(0); }
 .hero { background: linear-gradient(135deg, rgba(34,150,243,.08), rgba(14,165,164,.08)); border:1px solid var(--border); border-radius: 1rem; padding:1.25rem; }
-.theme-dark .hero { background: linear-gradient(135deg, rgba(34,150,243,.12), rgba(14,165,164,.12)); }
+.dark-theme .hero { background: linear-gradient(135deg, rgba(34,150,243,.12), rgba(14,165,164,.12)); }
 .section { scroll-margin-top: 80px; }
 .smooth { scroll-behavior: smooth; }
 .timeline { position: relative; padding-left: 1.25rem; }
@@ -49,7 +49,7 @@ a { color: var(--accent-2); } a:hover { opacity:.9; }
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-.theme-dark .glassmorphism {
+.dark-theme .glassmorphism {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -196,4 +196,68 @@ a { color: var(--accent-2); } a:hover { opacity:.9; }
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   z-index: 1000;
   transition: width 0.1s ease;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  /* Touch-friendly targets */
+  .btn, .nav-link, .contact-btn, .copy-btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Improved spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Better text sizing */
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+
+  /* Optimized card layouts */
+  .card-flat {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Better button spacing */
+  .d-flex.gap-2 {
+    gap: 0.5rem !important;
+  }
+
+  /* Improved navigation */
+  .navbar-nav {
+    padding: 1rem 0;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Better form inputs */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Touch interactions */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Swipe gestures support */
+.swipe-container {
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
 }

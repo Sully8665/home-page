@@ -6,6 +6,9 @@
     </button>
     <div id="navMenu" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
+        <li class="nav-item d-flex align-items-center">
+          <app-theme-toggle></app-theme-toggle>
+        </li>
         <li class="nav-item"><a href="#about" class="nav-link" [class.active]="activeSectionId==='about'">{{
             currentLang==='fa' ? NAV_FA.about : NAV.about }}</a></li>
         <li class="nav-item"><a href="#skills" class="nav-link" [class.active]="activeSectionId==='skills'">{{
