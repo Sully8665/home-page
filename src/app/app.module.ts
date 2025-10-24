@@ -28,14 +28,13 @@ import { GitHubStatsComponent } from './shared/components/github-stats/github-st
 import { SectionTitleComponent } from './shared/components/section-title/section-title.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { ThemeToggleComponent } from './shared/components/theme-toggle/theme-toggle.component';
-import { SkeletonLoaderComponent } from './shared/components/skeleton-loader/skeleton-loader.component';
 import { GlobalErrorHandlerService } from './core/error-handler/global-error-handler.service';
 import { ErrorHandler } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, AboutComponent, SkillsComponent, ExperienceComponent,
     TestimonialsComponent, EducationComponent, ContactComponent, SkillModalComponent, ArticlesComponent, AnimatedSkillBarComponent,
-    ParticleBackgroundComponent, ScrollProgressComponent, TypewriterComponent, ProjectsComponent, AchievementsComponent, GitHubStatsComponent, SectionTitleComponent, ToastComponent, ThemeToggleComponent, SkeletonLoaderComponent],
+    ParticleBackgroundComponent, ScrollProgressComponent, TypewriterComponent, ProjectsComponent, AchievementsComponent, GitHubStatsComponent, SectionTitleComponent, ToastComponent, ThemeToggleComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, MatIconModule, BrowserAnimationsModule, HttpClientModule],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandlerService }
