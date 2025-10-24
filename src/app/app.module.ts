@@ -28,6 +28,7 @@ import { GitHubStatsComponent } from './shared/components/github-stats/github-st
 import { SectionTitleComponent } from './shared/components/section-title/section-title.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { ThemeToggleComponent } from './shared/components/theme-toggle/theme-toggle.component';
+import { LazyLoadDirective } from './shared/directives/lazy-load.directive';
 import { GlobalErrorHandlerService } from './core/error-handler/global-error-handler.service';
 import { ErrorHandler } from '@angular/core';
 
@@ -35,7 +36,7 @@ import { ErrorHandler } from '@angular/core';
   declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, AboutComponent, SkillsComponent, ExperienceComponent,
     TestimonialsComponent, EducationComponent, ContactComponent, SkillModalComponent, ArticlesComponent, AnimatedSkillBarComponent,
     ParticleBackgroundComponent, ScrollProgressComponent, TypewriterComponent, ProjectsComponent, AchievementsComponent, GitHubStatsComponent, SectionTitleComponent, ToastComponent, ThemeToggleComponent],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, MatIconModule, BrowserAnimationsModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, MatIconModule, BrowserAnimationsModule, HttpClientModule, LazyLoadDirective],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandlerService }
   ],

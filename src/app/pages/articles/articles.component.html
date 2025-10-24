@@ -9,7 +9,7 @@
     <div class="articles-grid" *ngIf="!loading">
         <div class="article-card" *ngFor="let post of articles">
             <div class="image-wrapper" *ngIf="post.cover_image">
-                <img [src]="post.cover_image" alt="{{ post.title }}" />
+                <img [appLazyLoad]="post.cover_image" alt="{{ post.title }}" />
             </div>
 
             <div class="content">
