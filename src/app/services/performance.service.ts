@@ -145,10 +145,107 @@ export class PerformanceService {
     this.monitorWebVitals();
     this.resourcePreloader.initialize();
     this.serviceWorker.initialize();
+    this.optimizeCriticalRenderingPath();
+    this.implementLazyLoading();
     
     // Measure performance after page load
     window.addEventListener('load', () => {
       setTimeout(() => this.measurePerformance(), 1000);
     });
+  }
+
+  /**
+   * Optimize critical rendering path
+   */
+  private optimizeCriticalRenderingPath(): void {
+    // Inline critical CSS
+    this.inlineCriticalCSS();
+    
+    // Defer non-critical CSS
+    this.deferNonCriticalCSS();
+    
+    // Optimize font loading
+    this.optimizeFontLoading();
+  }
+
+  /**
+   * Inline critical CSS for faster rendering
+   */
+  private inlineCriticalCSS(): void {
+    const criticalCSS = `
+      body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+      .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+      .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
+      .section { scroll-margin-top: 80px; }
+    `;
+    
+    const style = document.createElement('style');
+    style.textContent = criticalCSS;
+    document.head.insertBefore(style, document.head.firstChild);
+  }
+
+  /**
+   * Defer non-critical CSS loading
+   */
+  private deferNonCriticalCSS(): void {
+    const nonCriticalCSS = [
+      'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css'
+    ];
+
+    nonCriticalCSS.forEach(href => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'style';
+      link.href = href;
+      link.onload = () => {
+        link.rel = 'stylesheet';
+      };
+      document.head.appendChild(link);
+    });
+  }
+
+  /**
+   * Optimize font loading
+   */
+  private optimizeFontLoading(): void {
+    // Preload critical fonts
+    const fontPreloads = [
+      { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', as: 'style' }
+    ];
+
+    fontPreloads.forEach(font => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = font.as;
+      link.href = font.href;
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+    });
+  }
+
+  /**
+   * Implement lazy loading for images and components
+   */
+  private implementLazyLoading(): void {
+    // Lazy load images
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target as HTMLImageElement;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+              imageObserver.unobserve(img);
+            }
+          }
+        });
+      });
+
+      // Observe all images with data-src
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
   }
 }
