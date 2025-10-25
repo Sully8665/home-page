@@ -1,3 +1,6 @@
+<!-- Skip to content link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- Background Effects -->
 <app-particle-background></app-particle-background>
 <app-scroll-progress></app-scroll-progress>
@@ -5,9 +8,8 @@
 <app-header></app-header>
 
 <!-- Main content sections -->
-<main class="container my-4 smooth-scroll">
+<main id="main-content" class="container my-4 smooth-scroll" role="main" aria-label="Main content">
   <section id="home" class="section section-transition mb-5"><app-home></app-home></section>
-  <section id="about" class="section section-transition mb-5"><app-about></app-about></section>
   <section id="skills" class="section section-transition mb-5"><app-skills></app-skills></section>
   <section id="projects" class="section section-transition mb-5"><app-projects></app-projects></section>
   <section id="experience" class="section section-transition mb-5"><app-experience></app-experience></section>

@@ -29,13 +29,14 @@ import { SectionTitleComponent } from './shared/components/section-title/section
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { ThemeToggleComponent } from './shared/components/theme-toggle/theme-toggle.component';
 import { LazyLoadDirective } from './shared/directives/lazy-load.directive';
+import { KeyboardNavigationDirective } from './shared/directives/keyboard-navigation.directive';
 import { GlobalErrorHandlerService } from './core/error-handler/global-error-handler.service';
 import { ErrorHandler } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, AboutComponent, SkillsComponent, ExperienceComponent,
     TestimonialsComponent, EducationComponent, ContactComponent, SkillModalComponent, ArticlesComponent, AnimatedSkillBarComponent,
-    ParticleBackgroundComponent, ScrollProgressComponent, TypewriterComponent, ProjectsComponent, AchievementsComponent, GitHubStatsComponent, SectionTitleComponent, ToastComponent, ThemeToggleComponent],
+    ParticleBackgroundComponent, ScrollProgressComponent, TypewriterComponent, ProjectsComponent, AchievementsComponent, GitHubStatsComponent, SectionTitleComponent, ToastComponent, ThemeToggleComponent, KeyboardNavigationDirective],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, MatIconModule, BrowserAnimationsModule, HttpClientModule, LazyLoadDirective],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandlerService }

@@ -14,6 +14,16 @@
   <meta name="googlebot" content="index, follow">
   <link rel="canonical" href="https://salehrezaei.com">
 
+  <!-- Accessibility Meta Tags -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Saleh Rezaei Portfolio">
+  <meta name="application-name" content="Saleh Rezaei Portfolio">
+  <meta name="msapplication-TileColor" content="#0ea5a4">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+
   <!-- Theme Configuration -->
   <meta name="theme-color" content="#0ea5a4">
   <meta name="color-scheme" content="dark light">
@@ -174,7 +184,18 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="dns-prefetch" href="https://www.vercel-insights.com">
   <link rel="dns-prefetch" href="https://plausible.io">
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+  
+  <!-- Accessibility and fallback content -->
+  <noscript>
+    <div style="text-align: center; padding: 2rem; font-family: Arial, sans-serif;">
+      <h1>JavaScript Required</h1>
+      <p>This application requires JavaScript to function properly. Please enable JavaScript in your browser settings and refresh the page.</p>
+      <p>If you continue to experience issues, please contact <a href="mailto:saleh.rezaei@gmail.com">saleh.rezaei@gmail.com</a> for assistance.</p>
+    </div>
+  </noscript>
+  
+  <!-- Screen reader only content for better accessibility -->
+  <div class="sr-only" aria-live="polite" aria-atomic="true" id="screen-reader-announcements"></div>
 </body>
 
 </html>

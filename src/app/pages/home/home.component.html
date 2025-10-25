@@ -1,12 +1,19 @@
-<section class="hero" itemscope itemtype="https://schema.org/Person">
+<section class="hero" itemscope itemtype="https://schema.org/Person" role="banner" aria-labelledby="hero-title">
   <div class="row align-items-center g-4">
     <div class="col-md-3 text-center">
-            <img src="assets/avatar.png" class="rounded-circle avatar-soft" width="140" height="140"
-                 alt="Saleh Rezaei - Senior Software Engineer" loading="lazy" decoding="async" itemprop="image">
+      <img src="assets/avatar.png" 
+           class="rounded-circle avatar-soft" 
+           width="140" 
+           height="140"
+           alt="Saleh Rezaei - Senior Software Engineer" 
+           loading="lazy" 
+           decoding="async" 
+           itemprop="image"
+           role="img">
     </div>
     <div class="col-md-9">
-      <h1 class="fw-bold mb-1" itemprop="name">{{ lang.current==='fa' ? NAME_FA : NAME }}</h1>
-      <h2 class="text-muted fs-6 mb-3" itemprop="jobTitle">
+      <h1 id="hero-title" class="fw-bold mb-1" itemprop="name">{{ lang.current==='fa' ? NAME_FA : NAME }}</h1>
+      <h2 class="text-muted fs-6 mb-3" itemprop="jobTitle" aria-live="polite">
         <app-typewriter 
           [text]="lang.current==='fa' ? ROLE_FA : ROLE" 
           [speed]="100" 
@@ -14,13 +21,26 @@
         </app-typewriter>
       </h2>
       <p class="mb-3" itemprop="description">{{ summary }}</p>
-      <div class="d-flex flex-wrap gap-2">
-        <a class="btn btn-accent" href="assets/Saleh-Rezaei-Resume.pdf" download 
-           aria-label="Download Saleh Rezaei's Resume">{{ lang.current==='fa' ? 'دانلود رزومه' : 'Download Resume' }}</a>
-        <a class="btn btn-outline-accent" href="#experience" 
-           aria-label="View professional experience">{{ lang.current==='fa' ? 'مشاهده تجربیات' : 'View Experience' }}</a>
-        <a class="btn btn-outline-secondary" href="#contact" 
-           aria-label="Get in touch with Saleh Rezaei">{{ lang.current==='fa' ? 'ارتباط' : 'Get in Touch' }}</a>
+      <div class="d-flex flex-wrap gap-2" role="group" aria-label="Action buttons">
+        <a class="btn btn-accent" 
+           href="assets/Saleh-Rezaei-Resume.pdf" 
+           download="Saleh-Rezaei-Resume.pdf"
+           aria-label="Download Saleh Rezaei's Resume in PDF format"
+           role="button">
+          {{ lang.current==='fa' ? 'دانلود رزومه' : 'Download Resume' }}
+        </a>
+        <a class="btn btn-outline-accent" 
+           href="#experience" 
+           aria-label="Navigate to professional experience section"
+           role="button">
+          {{ lang.current==='fa' ? 'مشاهده تجربیات' : 'View Experience' }}
+        </a>
+        <a class="btn btn-outline-secondary" 
+           href="#contact" 
+           aria-label="Navigate to contact section to get in touch"
+           role="button">
+          {{ lang.current==='fa' ? 'ارتباط' : 'Get in Touch' }}
+        </a>
       </div>
     </div>
   </div>

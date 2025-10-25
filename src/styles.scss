@@ -768,17 +768,478 @@ html {
   100% { background-position: -200% 0; }
 }
 
-/* Print styles */
+/* Print-friendly styles - استایل مناسب برای چاپ */
 @media print {
+  /* Hide interactive elements */
   .parallax-container,
   .scroll-progress,
-  .theme-toggle {
+  .theme-toggle,
+  .navbar,
+  .btn,
+  .contact-buttons,
+  .toast-inline,
+  .particles,
+  .floating-menu,
+  .pwa-install,
+  .pwa-update {
     display: none !important;
   }
   
+  /* Reset animations and transitions */
+  * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  /* Optimize layout for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .container {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Section styling */
   .section {
-    opacity: 1;
-    transform: none;
+    opacity: 1 !important;
+    transform: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 20pt !important;
+    padding: 10pt 0 !important;
+  }
+  
+  /* Typography for print */
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid;
+    margin-top: 15pt !important;
+    margin-bottom: 10pt !important;
+  }
+  
+  h1 { font-size: 18pt !important; }
+  h2 { font-size: 16pt !important; }
+  h3 { font-size: 14pt !important; }
+  
+  /* Card styling */
+  .card-flat {
+    border: 1pt solid #ccc !important;
+    background: white !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 10pt !important;
+    padding: 10pt !important;
+  }
+  
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+  
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
     page-break-inside: avoid;
   }
+  
+  /* Lists */
+  ul, ol {
+    page-break-inside: avoid;
+  }
+  
+  /* Tables */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  th, td {
+    border: 1pt solid #ccc !important;
+    padding: 5pt !important;
+  }
+  
+  /* Timeline */
+  .timeline {
+    padding-left: 0 !important;
+  }
+  
+  .timeline::before {
+    display: none !important;
+  }
+  
+  .timeline-item {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    page-break-inside: avoid;
+  }
+  
+  .timeline-item::before {
+    display: none !important;
+  }
+  
+  /* Skills and badges */
+  .badge-skill {
+    border: 1pt solid #ccc !important;
+    background: white !important;
+    color: black !important;
+    display: inline-block !important;
+    margin: 2pt !important;
+    padding: 2pt 5pt !important;
+  }
+  
+  /* Contact information */
+  .contact-info {
+    page-break-inside: avoid;
+  }
+  
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+  
+  .page-break-after {
+    page-break-after: always;
+  }
+  
+  .no-page-break {
+    page-break-inside: avoid;
+  }
+  
+  /* Print header/footer */
+  @page {
+    margin: 2cm;
+    @top-center {
+      content: "Saleh Rezaei - Portfolio";
+      font-size: 10pt;
+      color: #666;
+    }
+    @bottom-right {
+      content: "Page " counter(page);
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+}
+
+/* Accessibility improvements - بهبود دسترسی‌پذیری */
+
+/* Focus indicators */
+*:focus {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --accent: #0066cc;
+    --accent-2: #0066cc;
+    --bg: #ffffff;
+    --fg: #000000;
+    --muted: #333333;
+    --card: #ffffff;
+    --border: #000000;
+    --shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .dark-theme {
+    --bg: #000000;
+    --fg: #ffffff;
+    --muted: #cccccc;
+    --card: #000000;
+    --border: #ffffff;
+    --shadow: 0 2px 4px rgba(255,255,255,0.3);
+  }
+  
+  .parallax-container {
+    display: none;
+  }
+  
+  .glassmorphism {
+    background: var(--card);
+    border: 2px solid var(--border);
+    backdrop-filter: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .parallax-container,
+  .particles,
+  .floating,
+  .typewriter {
+    display: none;
+  }
+  
+  .section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .fade-in-up,
+  .fade-in-left,
+  .fade-in-right,
+  .scale-in,
+  .content-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Ensure interactive elements are keyboard accessible */
+button, a, input, textarea, select, [tabindex] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Improve button accessibility */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Form accessibility */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(14, 165, 164, 0.25);
+}
+
+/* Link accessibility */
+a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:not(.btn):hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Image accessibility */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img:not([alt]) {
+  border: 2px dashed #ff0000;
+}
+
+/* Table accessibility */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: var(--card);
+  font-weight: 600;
+  text-align: left;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+/* List accessibility */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* Color contrast improvements */
+.text-muted {
+  color: var(--muted) !important;
+  opacity: 0.8;
+}
+
+/* Ensure sufficient color contrast */
+@media (prefers-contrast: more) {
+  .text-muted {
+    opacity: 1;
+  }
+  
+  .btn-outline-accent {
+    border-width: 2px;
+  }
+}
+
+/* Touch target improvements for mobile */
+@media (max-width: 768px) {
+  .btn, .nav-link, .contact-btn, .copy-btn, button, a[role="button"] {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px 16px;
+  }
+  
+  /* Improve form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 48px;
+    padding: 12px;
+  }
+}
+
+/* ARIA live regions */
+.aria-live {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Loading states for screen readers */
+.loading[aria-busy="true"] {
+  position: relative;
+}
+
+.loading[aria-busy="true"]::after {
+  content: "Loading...";
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Error states */
+.error {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Success states */
+.success {
+  border-color: #198754 !important;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25) !important;
+}
+
+.success-message {
+  color: #198754;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Dark mode accessibility improvements */
+.dark-theme {
+  /* Ensure sufficient contrast in dark mode */
+  --muted: #a0a0a0;
+}
+
+.dark-theme .text-muted {
+  color: #a0a0a0 !important;
+}
+
+/* Focus management for modals and overlays */
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+}
+
+/* Ensure proper heading hierarchy */
+h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
+  margin-top: 1rem;
+}
+
+/* Improve readability */
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Better spacing for content */
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.content-section:last-child {
+  margin-bottom: 0;
 }
