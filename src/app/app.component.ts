@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component, HostListener, OnInit, AfterViewInit } fro
 import { ThemeService } from './services/theme.service';
 import { IntersectionObserverService } from './services/intersection-observer.service';
 import { PerformanceService } from './services/performance.service';
+import { AnalyticsService } from './services/analytics.service';
+import { ErrorTrackingService } from './services/error-tracking.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,9 @@ export class AppComponent implements OnInit, AfterViewInit
     private cdr: ChangeDetectorRef,
     private themeService: ThemeService,
     private intersectionObserver: IntersectionObserverService,
-    private performanceService: PerformanceService
+    private performanceService: PerformanceService,
+    private analyticsService: AnalyticsService,
+    private errorTrackingService: ErrorTrackingService
   ) { }
 
   ngOnInit(): void {
