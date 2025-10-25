@@ -1,9 +1,6 @@
 import { ChangeDetectorRef, Component, HostListener, OnInit, AfterViewInit } from '@angular/core';
 import { ThemeService } from './services/theme.service';
 import { IntersectionObserverService } from './services/intersection-observer.service';
-import { PerformanceService } from './services/performance.service';
-import { AnalyticsService } from './services/analytics.service';
-import { ErrorTrackingService } from './services/error-tracking.service';
 
 @Component({
   selector: 'app-root',
@@ -15,18 +12,12 @@ export class AppComponent implements OnInit, AfterViewInit
   constructor(
     private cdr: ChangeDetectorRef,
     private themeService: ThemeService,
-    private intersectionObserver: IntersectionObserverService,
-    private performanceService: PerformanceService,
-    private analyticsService: AnalyticsService,
-    private errorTrackingService: ErrorTrackingService
+    private intersectionObserver: IntersectionObserverService
   ) { }
 
   ngOnInit(): void {
     // Initialize theme service
     this.themeService.watchSystemTheme();
-    
-    // Initialize performance optimizations
-    this.performanceService.initialize();
   }
 
   ngAfterViewInit(): void {
